@@ -62,3 +62,16 @@ Awaiting team confirmation.
 ## 7. Important Note
 
 All baseline values are provisional educational development values. They do not represent verified aircraft design specifications.
+## 5. Coordinate Convention — TEAM APPROVED
+
+- Global X: Fuselage longitudinal axis.
+- Global Y: Circumferential tangent at panel centre.
+- Global Z: Radial outward direction at panel centre.
+
+- Fuselage centreline: Along X.
+- Fuselage cross-section: YZ plane.
+- Panel centre: Located at +Z.
+- Window plane: Approximately local XY tangent plane.
+- Coordinate system: Right-handed.
+
+Status: Approved by Member 1.
