@@ -1,0 +1,36 @@
+FUSESAFE — Member 1 Day 1 Notes
+
+MY RESPONSIBILITY
+Select and document the material.
+Perform basic stress calculations.
+Help define loads and supports.
+Check structural analysis results.
+
+BASELINE DEVELOPMENT VALUES
+Window width: 400 mm
+Window height: 400 mm
+Fuselage radius: 2000 mm
+Skin thickness: 2 mm
+Pressure difference: 55 kPa
+Required factor of safety: 2
+Trial added reinforcement thickness: 2 mm
+Total thickness inside reinforcement band: 4 mm
+
+These are initial development values.
+They are not a verified safe aircraft design.
+
+DECISIONS STILL REQUIRED
+Aluminium alloy grade and temper: NOT SELECTED
+Panel axial length: NOT DECIDED
+Panel circumferential span: NOT DECIDED
+Window corner-radius rule: NOT DECIDED
+Reinforcement band width: NOT DECIDED
+Shell reference surface and offset: NOT DECIDED
+Loading and support method: NOT DECIDED
+
+CURRENT STATUS
+MATLAB opens.
+Ansys opens.
+I am a beginner in Ansys.
+A teammate is assigned geometry.
+No structural result has been verified.
