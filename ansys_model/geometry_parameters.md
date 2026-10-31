@@ -293,3 +293,53 @@ Only after reviewing the intact reference should the window and reinforcement mo
 - Keep the loading approach marked PROPOSED until validated.
 - Do not report geometry, meshing or FEA as completed until verified in the actual software.
 - A passing numerical stress result does not prove real aircraft safety.
+## 14. Material Selection — Aluminium 2024-T3
+
+### Selected preliminary material
+
+The initial educational model uses Aluminium 2024-T3.
+
+Ansys Engineering Data material name:
+
+`FUSESAFE_2024_T3_PROVISIONAL`
+
+### Preliminary material properties
+
+| Property | Value |
+|---|---:|
+| Young's modulus | 73,100 MPa |
+| Young's modulus (SI) | 7.31 × 10^10 Pa |
+| Poisson's ratio | 0.33 |
+| Density | 2,780 kg/m³ |
+| Tensile yield strength | 345 MPa |
+| Tensile yield strength (SI) | 3.45 × 10^8 Pa |
+
+### Material status
+
+- Material properties entered and saved in ANSYS Engineering Data by Member 1.
+- Material has not yet been assigned to geometry.
+- No structural analysis has been solved using this material.
+- Member 2 must coordinate with Member 1 before assigning material and shell thicknesses.
+
+### Limitations
+
+These are provisional properties for the initial educational model.
+
+Some values are published typical material properties and are not sheet-specific design allowables.
+
+They must not be treated as certified aircraft design properties or used to establish real aircraft safety.
+
+### Factor of Safety
+
+The required factor of safety is 2.
+
+It is an acceptance criterion for evaluating the analysis results. Do not multiply the applied pressure or proposed edge loads by the factor of safety.
+
+### Source
+
+Material source and limitations are documented in:
+
+`validation/material_selection.md`
+
+This file is currently on the `fea-validation` branch. Its merge into `main` has not yet been confirmed.
+
