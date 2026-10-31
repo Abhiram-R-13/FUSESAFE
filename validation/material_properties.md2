@@ -1,0 +1,65 @@
+
+# FUSESAFE - Material Properties
+
+## 1. Material Selection
+
+Selected material: Aluminium 2024-T3
+
+Status: PROVISIONAL - Educational model only.
+
+Material form: Aluminium sheet
+Assumed skin thickness: 2 mm
+
+## 2. Material Properties
+
+| Property | Symbol | Value | Unit |
+|---|---|---:|---|
+| Young's Modulus | E | 73100 | MPa |
+| Poisson's Ratio | nu | 0.33 | Dimensionless |
+| Density | rho | 2780 | kg/m^3 |
+| Tensile Yield Strength | sigma_y | 345 | MPa |
+
+## 3. Design Requirements
+
+| Parameter | Value |
+|---|---:|
+| Required Factor of Safety | 2 |
+| Skin thickness | 2 mm |
+| Pressure difference | 55 kPa |
+| Fuselage radius | 2000 mm |
+
+## 4. Preliminary Strength Calculation
+
+Allowable stress based on yield:
+
+sigma_allowable = sigma_y / FoS
+
+sigma_allowable = 345 / 2
+
+sigma_allowable = 172.5 MPa
+
+## 5. Material Data Limitations
+
+The listed values are representative preliminary
+properties, not certified design allowables.
+
+Actual properties depend on sheet thickness,
+product form, material specification and orientation.
+
+A thickness-specific manufacturer datasheet must
+be obtained before finalising the material definition.
+
+## 6. References
+
+1. MatWeb - Aluminum 2024-T3:
+https://www.matweb.com/search/datasheet.aspx?MatGUID=57483b4d782940faaf12964a1821fb61
+
+2. NASA Technical Report - Mechanical Properties
+of 2024-T3 Aluminum Alloy:
+https://ntrs.nasa.gov/api/citations/19660022534/downloads/19660022534.pdf
+
+## 7. Important Disclaimer
+
+This material selection is for an educational
+structural analysis model. It does not establish
+aircraft certification or real-world safety.
