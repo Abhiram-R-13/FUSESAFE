@@ -17,34 +17,40 @@ This educational model does not establish real aircraft structural safety or cer
 
 ## 2. Software Environment
 
-| Component | Version | Status |
-|---|---|---|
-| ANSYS Workbench | 2025 R1 | Opened successfully |
-| ANSYS Discovery Enterprise | 2025 R1 | Opened successfully |
-| ANSYS Mechanical Enterprise | 2025 R1 | Opened successfully |
-| MATLAB | To be verified | Pending |
+Verified on the new laptop:
+- ANSYS Workbench 2025 R1 Enterprise.
+- ANSYS DesignModeler 2025 R1.
+- ANSYS SpaceClaim 2025 R1.
+- ANSYS Mechanical 2025 R1 Enterprise.
 
-Hardware:
-- GPU: AMD Radeon(TM) 680M.
-- Discovery reports that Explore and LiveGX Refine are unavailable because the GPU is not CUDA-compatible.
-- Discovery reports that a full installation is required for solving.
-- Mechanical has opened, but meshing and solver execution remain unverified.
+Case A retains its DesignModeler sketch and extrusion history.
+Case B was constructed in SpaceClaim using a developed flat ring,
+Wrap, a separate Imprint operation, and removal of the central face.
 
-## 3. Coordinate System
+Current local work folder:
+C:\Users\Gowtham\FUSESAFE_Work
 
-The team-approved global coordinate convention is:
+The former laptop's hardware, Discovery GPU limitations and file paths
+do not describe this laptop.
 
-| Axis | Direction | Meaning |
-|---|---|---|
-| X | Axial | Nose-to-tail direction |
-| Y | Circumferential | Tangential direction at panel centre |
-| Z | Radial | Outward from fuselage centre |
+Both geometries have opened in Mechanical. Meshing and solving remain
+unverified. MATLAB installation is not required for this manual geometry
+checkpoint.
+## 3. Coordinate System — Verified Geometry
 
-The cylindrical shell axis is along global X.
+- Global X is the cylinder axis and panel axial direction, spanning X = 0 to 1600 mm.
+- The panel is centred circumferentially about global +Y.
+- At the circumferential centreline, radial outward is +Y and the circumferential tangent is along Z.
+- Circumferential curvature lies in YZ cross-sectional planes.
+- Away from the centreline, radial and tangential directions vary around the cylinder.
 
-The window width is measured along X.
+Window width is measured along X. Window height is measured along the developed circumferential surface, not a planar projection.
 
-The window height is measured along the circumferential surface arc.
+Boundary naming:
+- A_AxialEnds / B_AxialEnds: curved end edges at constant X.
+- A_CircumferentialSides / B_CircumferentialSides: straight side edges parallel to X.
+
+Case B CAD normals were visually checked in SpaceClaim and point radially outward on both skin and band faces. Case A normals and Mechanical shell orientation/pressure sign remain to be checked independently.
 
 ## 4. Shared Panel Dimensions
 
@@ -261,28 +267,57 @@ Only after reviewing the intact reference should the window and reinforcement mo
 
 ## 12. Current Progress
 
-### Verified
-- ANSYS Workbench 2025 R1 opens.
-- ANSYS Discovery Enterprise 2025 R1 opens.
-- ANSYS Mechanical Enterprise 2025 R1 opens.
-- Metric modelling units configured in Discovery.
-- Team coordinate conventions agreed.
-- Provisional panel dimensions received.
-- Window and reinforcement dimensions received.
-- Member 1's initial loading and support proposal reviewed.
+### Verified — Member 2 geometry checkpoint, 1 November 2026
 
-### Pending
-- Intact curved panel geometry.
-- Window panel geometry.
-- Separate skin and reinforcement face regions.
-- Named or identifiable boundary regions.
-- Geometry regeneration test.
-- Shell thickness and offset assignments.
-- Mesh generation and verification.
-- Approved support and loading implementation.
-- Intact reference FEA validation.
-- Window model FEA validation.
-- MATLAB–ANSYS integration.
+- Workbench, DesignModeler, SpaceClaim and Mechanical 2025 R1 used on the new laptop.
+- Case A: one intact surface body, one face, four edges; area 2,560,000 mm².
+- Case B: one surface body containing separate skin and band faces, with a rounded window opening.
+- Case B construction bodies B_Developed_Band_Source and B_Wrapped_Band_Tool removed.
+- Case B Check Geometry reported no geometry problems.
+- Case B band area: 84,419.8437 mm².
+- Case B total retained surface area: 2,401,373.8761 mm².
+- Case B cylindrical band radius: 2000 mm.
+- Case B CAD normals visually checked as radially outward on both faces.
+- Both cases imported into Mechanical 2025 R1 as shell bodies.
+- Named selections transferred and their face/edge counts checked.
+- Case A extrusion depth changed from 1600 to 1610 mm, regenerated successfully, then restored to 1600 mm and saved.
+- Both project archives restored into separate check folders and opened successfully in Mechanical.
+- Both archives uploaded to ansys_model on branch geometry:
+  - FUSESAFE_M2_A_Intact.wbpz
+  - FUSESAFE_M2_B_WindowBand.wbpz
+
+### Named selections
+
+| Case A | Entity count |
+|---|---:|
+| A_Skin | 1 face |
+| A_CircumferentialSides | 2 edges |
+| A_AxialEnds | 2 edges |
+
+| Case B | Entity count |
+|---|---:|
+| B_Skin | 1 face |
+| B_Band | 1 face |
+| B_OpeningEdge | 8 edges |
+| B_CircumferentialSides | 2 edges |
+| B_AxialEnds | 2 edges |
+
+### Pending geometry and handoff checks
+
+- Independently check Case A face-normal orientation.
+- Verify Case B developed dimensions and centring after wrapping; source dimensions and areas alone do not fully establish this.
+- Demonstrate Case B geometry variation and baseline restoration. Independent width/height/radius parameters and automatic corner-radius rules are not implemented.
+- Verify Mechanical shell orientation, thickness scoping and offsets.
+- Verify shared skin/band mesh connectivity when meshing is undertaken.
+
+### Pending analysis and integration
+
+- Physical shell thicknesses remain unassigned: Mechanical displayed zero body thickness at this checkpoint.
+- Intended skin thickness is 2 mm; trial band thickness is 4 mm total, including 2 mm added reinforcement.
+- Confirm the provisional material is available and assign it with Member 1.
+- Mesh generation, mesh verification, approved supports and loads.
+- Intact and window-model FEA validation.
+- Automation integration; MATLAB is not required for Member 2's manual geometry work.
 
 ## 13. Important Project Notes
 
