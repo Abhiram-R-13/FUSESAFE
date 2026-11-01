@@ -109,3 +109,65 @@ Confirmed from Member 2's restored DesignModeler geometry:
 - The separate flat source ring in Case B is construction geometry and must not receive structural loads.
 
 Named selections and actual shell-normal verification remain pending.
+## Preliminary free-body equilibrium check
+
+### Baseline parameters
+
+- Internal-minus-external pressure: p = 0.055 N/mm²
+- Shell midsurface radius: R = 2000 mm
+- Axial panel length: L = 1600 mm
+- Circumferential arc length: s = 1600 mm
+- Half circumferential angle: a = s/(2R) = 0.4 rad
+
+### 1. Pressure resultant
+
+For the symmetric curved cylindrical panel, the resultant of pressure in the radial-centre direction (+Y) is:
+
+F_pressure = 2*p*R*L*sin(a)
+
+F_pressure = 2*0.055*2000*1600*sin(0.4)
+
+F_pressure ≈ 137075 N
+
+### 2. Circumferential boundary actions
+
+The circumferential membrane-force intensity is:
+
+N_circumferential = p*R = 110 N/mm
+
+The two circumferential-side boundary actions have a combined resultant magnitude in the -Y direction:
+
+F_circumferential = 2*N_circumferential*L*sin(a)
+
+F_circumferential ≈ 137075 N
+
+### 3. Axial boundary actions
+
+The axial membrane-force intensity is:
+
+N_axial = p*R/2 = 55 N/mm
+
+Each axial-end boundary action has a resultant magnitude:
+
+F_axial = N_axial*1600 = 88000 N
+
+The two axial-end actions act in opposite global X directions.
+
+### 4. Preliminary force balance
+
+For the ideal symmetric panel:
+
+- Pressure resultant acts in +Y.
+- Circumferential boundary resultant acts in -Y.
+- Axial boundary actions cancel in global X.
+- Symmetry gives zero net global Z force.
+
+Therefore, the calculated global resultant forces balance.
+
+### Limitations
+
+This is a preliminary resultant-force check, not a complete proof of mechanical equilibrium.
+
+The boundary traction directions, moment equilibrium, shell normal, load application method and support reactions must still be verified using the actual curved geometry and its free-body diagram.
+
+These calculations do not constitute ANSYS results.
