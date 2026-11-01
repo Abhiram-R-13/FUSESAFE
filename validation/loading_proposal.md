@@ -95,3 +95,17 @@ pressurized aircraft window assembly.
 - Panel-size and boundary-distance sensitivity.
 
 Required FoS changes acceptance, not applied pressure.
+## Confirmed coordinate and boundary-edge clarification
+
+Confirmed from Member 2's restored DesignModeler geometry:
+
+- Global X is the longitudinal/axial direction, spanning X = 0 to 1600 mm.
+- Global +Y is radially outward at the panel centre.
+- Circumferential curvature lies in YZ cross-sectional planes.
+- The actual shell face-normal orientation has not yet been verified. Pressure direction must not be assigned based only on the intended radial direction.
+- The two axial-end edges are curved edges at X = 0 and X = 1600 mm. These carry the proposed axial membrane actions.
+- The two circumferential-side edges are straight edges parallel to X. These carry the proposed circumferential membrane actions.
+- Edge-force directions must follow the actual edge orientation and be opposite on opposing boundaries.
+- The separate flat source ring in Case B is construction geometry and must not receive structural loads.
+
+Named selections and actual shell-normal verification remain pending.
