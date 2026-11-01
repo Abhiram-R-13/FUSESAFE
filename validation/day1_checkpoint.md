@@ -82,3 +82,21 @@ Receive Member 2's geometry screenshot/files.
 Review geometry, shell regions, units and boundary identification.
 Start with the intact-panel reference before interpreting
 the window model.
+### ANSYS Mechanical — Intact Panel Edge Selections
+
+**Status:** Created in the restored Case A Static Structural model.
+
+Four named edge selections were created on the intact curved shell panel:
+
+| Named selection | Geometry |
+|---|---|
+| `Axial_Edge_1` | First curved boundary |
+| `Axial_Edge_2` | Opposite curved boundary |
+| `Circumferential_Edge_1` | First straight boundary |
+| `Circumferential_Edge_2` | Opposite straight boundary |
+
+Each named selection was visually checked and contains exactly one edge.
+
+**Important:** These selections are geometric references only. Their coordinate directions, shell-normal orientation, and suitability for applying loads or supports have not yet been validated.
+
+The model was saved in ANSYS Mechanical.
