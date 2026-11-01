@@ -1,91 +1,100 @@
 # FUSESAFE initial loading and support proposal
 
-Status: PROPOSED. Not implemented or validated.
+**Status: PROPOSED. Not implemented or validated.**
 
 ## Purpose
-Represent a small patch of a pressurized closed cylindrical shell
-using pressure and mechanically consistent boundary actions.
 
-Do not fix all four edges and assume the result represents
-an unrestricted fuselage.
+Represent a small patch of a pressurized closed cylindrical shell using pressure and mechanically consistent boundary actions.
+
+Do not fix all four edges and assume the result represents an unrestricted fuselage.
 
 ## Coordinates
-X: axial, nose to tail.
-Circumferential: around the fuselage.
-Radial: outward normal.
 
-Window width is axial.
-Window height is circumferential arc length.
+The final global coordinate convention, confirmed by Member 2:
+
+- **Global X:** longitudinal/axial direction, nose to tail, spanning X = 0 to 1600 mm.
+- **Global +Y:** radially outward at the panel circumferential centreline.
+- **Global +Z:** circumferential tangent at the panel centreline.
+- **Curvature:** lies in the YZ cross-sectional planes.
+
+The local radial and circumferential tangent directions vary around the curved panel. Global +Y and +Z therefore do not represent constant local radial and circumferential directions over the entire surface.
+
+Window width is axial. Window height is circumferential arc length.
+
+The earlier convention that treated global Y as circumferential and global Z as radial is superseded. No geometry rotation is planned.
 
 ## Pressure
+
 Baseline internal-minus-external pressure: 55 kPa.
-Equivalent pressure: 0.055 MPa = 0.055 N/mm^2.
+
+Equivalent pressure: 0.055 MPa = 0.055 N/mm².
 
 Apply the pressure once to the retained shell surface.
-Verify the shell normal and pressure sign so loading acts outward.
+
+Verify the shell face normal and pressure sign so loading acts outward. Do not assume that the intended radial direction automatically matches the Mechanical shell normal.
 
 ## Proposed boundary loading
+
 Use the membrane actions transmitted by the surrounding shell.
 
 Circumferential membrane force per unit edge length:
+
 N_circumferential = p * R
+
 Baseline value: 110 N/mm.
 
 Axial membrane force per unit edge length:
+
 N_axial = p * R / 2
+
 Baseline value: 55 N/mm.
 
-At the two axial ends, apply opposing outward axial tractions.
+At the two axial ends, apply opposing axial membrane tractions in the global X direction.
 
-At the two circumferential boundaries, apply outward
-circumferential tangent tractions using each edge's actual
-orientation.
+At the two circumferential-side boundaries, apply opposing circumferential membrane tractions along the local circumferential tangent directions. These directions must be determined from the actual curved geometry.
 
-These edge actions represent the removed surrounding shell.
-Their consistency with the applied pressure must be checked
-using a free-body diagram and reaction equilibrium.
+These edge actions represent the removed surrounding shell. Their consistency with the applied pressure must be checked using a free-body diagram and reaction equilibrium.
 
 N/mm values are line-load intensities, not pressure values.
-If entered through another Ansys load type, conversion and
-distribution must be derived and checked.
+
+If entered through another Ansys load type, conversion and distribution must be derived and checked.
 
 ## Supports
+
 Use only the constraints needed to remove rigid body motion.
 
-The exact constrained nodes and degrees of freedom will be
-selected after geometry and mesh are available.
+The exact constrained nodes and degrees of freedom will be selected after geometry and mesh are available.
 
-Do not introduce blanket clamping or use weak springs as
-a substitute for a reviewed support definition.
+Do not introduce blanket clamping or use weak springs as a substitute for a reviewed support definition.
 
 ## Required first validation case
-First analyse an intact curved panel without the opening
-and without added reinforcement.
 
-Use the same radius, skin thickness, loading philosophy
-and boundary treatment as the later window model.
+First analyse an intact curved panel without the opening and without added reinforcement.
+
+Use the same radius, skin thickness, loading philosophy and boundary treatment as the later window model.
 
 Reference nominal stresses:
-Hoop stress: 55 MPa.
-Axial stress: 27.5 MPa.
-Von Mises stress: approximately 47.63 MPa.
+
+- Hoop stress: 55 MPa.
+- Axial stress: 27.5 MPa.
+- Von Mises stress: approximately 47.63 MPa.
 
 Inspect far-field membrane stresses, deformation and equilibrium.
+
 Do not expect a contour alone to establish validity.
 
-After reviewing this reference case, introduce the opening
-and reinforcement and repeat the checks.
+After reviewing this reference case, introduce the opening and reinforcement and repeat the checks.
 
 ## Window idealization
+
 The initial model excludes glazing and its pressure-load transfer.
 
-The opening boundary is free unless a separately reviewed
-window/frame loading model is introduced.
+The opening boundary is free unless a separately reviewed window/frame loading model is introduced.
 
-This is an idealized structural study, not a complete
-pressurized aircraft window assembly.
+This is an idealized structural study, not a complete pressurized aircraft window assembly.
 
 ## Pending implementation checks
+
 - Actual shell normals and edge directions.
 - Ansys load type and unit conversion.
 - Named selections.
@@ -95,20 +104,24 @@ pressurized aircraft window assembly.
 - Panel-size and boundary-distance sensitivity.
 
 Required FoS changes acceptance, not applied pressure.
+
 ## Confirmed coordinate and boundary-edge clarification
 
-Confirmed from Member 2's restored DesignModeler geometry:
+Confirmed from Member 2's restored geometry:
 
 - Global X is the longitudinal/axial direction, spanning X = 0 to 1600 mm.
-- Global +Y is radially outward at the panel centre.
+- Global +Y is radially outward at the panel centreline.
+- Global +Z is circumferential tangent at the panel centreline.
 - Circumferential curvature lies in YZ cross-sectional planes.
+- Local radial and circumferential tangent directions vary around the curved panel.
 - The actual shell face-normal orientation has not yet been verified. Pressure direction must not be assigned based only on the intended radial direction.
 - The two axial-end edges are curved edges at X = 0 and X = 1600 mm. These carry the proposed axial membrane actions.
-- The two circumferential-side edges are straight edges parallel to X. These carry the proposed circumferential membrane actions.
-- Edge-force directions must follow the actual edge orientation and be opposite on opposing boundaries.
+- The two circumferential-side edges are straight edges parallel to X. These carry the proposed circumferential membrane actions, acting along the local circumferential tangent directions rather than along the edge.
+- Edge-force directions must follow the actual geometry and be opposite on opposing boundaries.
 - The separate flat source ring in Case B is construction geometry and must not receive structural loads.
 
 Named selections and actual shell-normal verification remain pending.
+
 ## Preliminary free-body equilibrium check
 
 ### Baseline parameters
