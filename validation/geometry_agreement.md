@@ -92,3 +92,20 @@ the chosen boundaries affect the window-region results.
 - Define and review loads and supports.
 - Validate the intact-shell reference.
 - Check mesh convergence and panel-size sensitivity.
+- ## Temporary construction geometry and export requirement
+
+Member 2 confirmed that `B_Developed_Band_Source` is temporary flat construction geometry used to wrap the opening and reinforcement-band boundaries.
+
+It is not intended to be part of the final structural model.
+
+Before exporting the structural geometry:
+
+1. Complete wrapping and verify the curved opening and reinforcement-band boundaries.
+2. Remove or explicitly exclude `B_Developed_Band_Source` from the final structural geometry.
+3. Verify that only the intended curved structural shell remains.
+4. Inspect the exported geometry in ANSYS Mechanical.
+5. Confirm that the temporary source geometry is absent and cannot receive structural loads.
+
+Hiding the construction geometry alone does not establish that it is excluded from export.
+
+Geometry construction and export exclusion remain pending verification.
