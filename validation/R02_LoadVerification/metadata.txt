@@ -1,0 +1,32 @@
+Read-only mesh export; no mesh regeneration or loads/supports added.
+Nodes=4961 Elements=1600
+Mesh coordinate unit=m
+X bounds=0, 1.6
+Y bounds=1.842121988008936, 2
+Z bounds=-0.77883668460981204, 0.77883668460981303
+Candidate restraint node 1178: 0.039999987162820591 1.857329182531391 0.74184116070576245 (mesh units)
+Candidate restraint node 1143: 1.55999987518182 1.857329215130908 0.74184107908716046 (mesh units)
+Candidate restraint node 1229: 0.59999997000232774 1.857327354555207 -0.7418457373477032 (mesh units)
+
+BODY A_Intact_Skin
+CrossSectionArea=0 [m m]
+FiberCrossSectionArea=0 [m m]
+FluidCrossArea=0 [m m]
+ManualThicknessMode=True
+Material=FUSESAFE_2024_T3_PROVISIONAL
+MaterialPolarizationDirection=PositiveXDirection
+OffsetMode=Automatic
+OffsetType=Centroid
+OffsetX=0 [m]
+OffsetY=0 [m]
+PipeThickness=1.06121699976273E-315 [m]
+ShellOffsetType=Middle
+SurfaceArea=2.5599999999739826 [m m]
+Thickness=0.002 [m]
+ThicknessMode=True
+
+Element node order is exported unchanged from Mechanical mesh API.
+Boundary membership lists local node indices, not an oriented edge traversal.
+No pressure load exists in the supplied tree: inner-side selection/sign is unverified.
+Nominal CAD midsurface: axis X, R=2000 mm, X=0..1600 mm, angular span -0.4..0.4 rad.
+Nominal shell: thickness 2 mm, Manual Middle; verify exported body properties and solver sections.
