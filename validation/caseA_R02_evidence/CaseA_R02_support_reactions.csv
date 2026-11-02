@@ -1,0 +1,4 @@
+run_id,case,model,node_id,restraint_name,force_coordinate_system,Fx_N,Fy_N,Fz_N,total_reaction_N
+CaseA_R02_PRELIMINARY,Case A R02,Intact curved fuselage panel,1178,Restraint_A_Node1178,Global Coordinate System,7.4365e-7,2.0363e-4,-3.5021e-7,2.0363e-4
+CaseA_R02_PRELIMINARY,Case A R02,Intact curved fuselage panel,1143,Restraint_B_Node1143,Global Coordinate System,0,3.5158e-4,3.6643e-7,3.5158e-4
+CaseA_R02_PRELIMINARY,Case A R02,Intact curved fuselage panel,1229,Restraint_C_Node1229,Global Coordinate System,0,5.5521e-4,0,5.5521e-4
