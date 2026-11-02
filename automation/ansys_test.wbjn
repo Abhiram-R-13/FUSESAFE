@@ -1,0 +1,66 @@
+# FUSESAFE: Basic Ansys communication test
+
+import os
+
+input_path = r"S:\FUSESAFE_Automation_Test\request.csv"
+
+output_path = r"S:\FUSESAFE_Automation_Test\response.csv"
+
+error_path = r"S:\FUSESAFE_Automation_Test\ansys_error.txt"
+
+# Remove previous outputs to prevent stale results
+if os.path.isfile(output_path):
+    os.remove(output_path)
+
+if os.path.isfile(error_path):
+    os.remove(error_path)
+
+try:
+
+    # Read MATLAB input
+    f = open(input_path, 'r')
+    lines = [line.strip() for line in f.readlines() if line.strip()]
+    f.close()
+
+    # Validate input
+    if len(lines) != 2:
+        raise Exception("Unexpected CSV row count")
+
+    headers = lines[0].split(',')
+    values = lines[1].split(',')
+
+    if headers != ['run_id', 'input_value']:
+        raise Exception("Incorrect CSV headers")
+
+    if len(values) != 2:
+        raise Exception("Incorrect input columns")
+
+    # Extract values
+    run_id = values[0]
+    input_value = float(values[1])
+
+    # Perform a simple calculation
+    result_value = input_value * 2.0
+
+    # Write response
+    f = open(output_path, 'w')
+
+    f.write('run_id,input_value,result_value\n')
+
+    f.write('%s,%.15g,%.15g\n' %
+            (run_id, input_value, result_value))
+
+    f.close()
+
+    print("FUSESAFE communication test successful")
+    print("Run ID:", run_id)
+    print("Input:", input_value)
+    print("Result:", result_value)
+
+except Exception as e:
+
+    f = open(error_path, 'w')
+    f.write(str(e))
+    f.close()
+
+    raise
