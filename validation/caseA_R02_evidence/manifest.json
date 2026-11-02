@@ -1,0 +1,165 @@
+
+{
+  "schema_version": "1.0",
+  "run_id": "FUSESAFE-CASEA-R02-PRELIM-20261102",
+  "run_id_type": "Project-assigned identifier, not ANSYS-generated",
+  "status": "preliminary",
+  "analysis_date": "2026-11-02",
+
+  "software": {
+    "name": "ANSYS Mechanical",
+    "version": "2025 R1",
+    "solver": "ANSYS MAPDL",
+    "solver_build": "25.1",
+    "solver_status": "RUN COMPLETED",
+    "cpu_time_seconds": 3.516,
+    "elapsed_time_seconds": 5.0
+  },
+
+  "model": {
+    "case": "Case A R02",
+    "description": "Intact curved fuselage panel",
+    "representation": "Shell midsurface",
+    "units": "mm, N, MPa",
+    "coordinates": {
+      "X": "Axial",
+      "Y": "Radial outward at panel centre",
+      "Z": "Circumferential tangent at panel centre"
+    },
+    "geometry": {
+      "midsurface_radius_mm": 2000,
+      "axial_length_mm": 1600,
+      "circumferential_arc_length_mm": 1600,
+      "skin_thickness_mm": 2
+    }
+  },
+
+  "mesh": {
+    "element_type": "SHELL281",
+    "nodes": 4961,
+    "elements": 1600,
+    "connectivity_audit": "Passed",
+    "connected_components": 1
+  },
+
+  "material": {
+    "name": "FUSESAFE_2024_T3_PROVISIONAL",
+    "youngs_modulus_MPa": 73100,
+    "poissons_ratio": 0.33,
+    "density_kg_per_mm3": 0.00000278,
+    "tensile_yield_strength_MPa": 345,
+    "material_status": "Provisional educational properties"
+  },
+
+  "loading": {
+    "pressure": {
+      "magnitude_MPa": 0.055,
+      "intended_direction": "Radially outward",
+      "reference_surface": "Shell midsurface"
+    },
+    "axial_edge_tractions": [
+      {
+        "components_N_per_mm": [-55, 0, 0]
+      },
+      {
+        "components_N_per_mm": [55, 0, 0]
+      }
+    ],
+    "circumferential_edge_tractions": [
+      {
+        "components_N_per_mm": [0, -42.836, 101.32]
+      },
+      {
+        "components_N_per_mm": [0, -42.836, -101.32]
+      }
+    ],
+    "load_definition_reference": "CaseA_R02_Loads_Supports_Verification.dat"
+  },
+
+  "supports": {
+    "scheme": "Candidate 3-2-1",
+    "rotational_dofs": "Free",
+    "constraint_coordinate_system": "Nodal Coordinate System",
+    "nodes": [
+      {
+        "label": "A",
+        "node_id": 1178,
+        "constrained_components": ["X", "Y", "Z"]
+      },
+      {
+        "label": "B",
+        "node_id": 1143,
+        "constrained_components": ["Y", "Z"]
+      },
+      {
+        "label": "C",
+        "node_id": 1229,
+        "constrained_components": ["Y"]
+      }
+    ],
+    "stability_validation": "Pending",
+    "location_sensitivity": "Pending"
+  },
+
+  "results": {
+    "maximum_total_deformation_mm": 0.8999,
+
+    "equivalent_stress_MPa": {
+      "bottom": {
+        "maximum": 47.642,
+        "minimum": 47.616,
+        "average": 47.627
+      },
+      "top": {
+        "maximum": 47.635,
+        "minimum": 47.616,
+        "average": 47.627
+      }
+    },
+
+    "maximum_von_mises_location": {
+      "surface": "Bottom",
+      "node_id": 39,
+      "stress_MPa": 47.642,
+      "coordinates_mm": {
+        "X": 1625.459991,
+        "Y": 1921.513090,
+        "Z": 581.284595
+      }
+    },
+
+    "maximum_principal_stress_MPa": {
+      "maximum": 55.013,
+      "average": 54.997,
+      "minimum": 54.989
+    },
+
+    "middle_principal_stress_MPa": {
+      "maximum": 27.515,
+      "average": 27.500,
+      "minimum": 27.485
+    },
+
+    "minimum_principal_stress_MPa": {
+      "maximum": 0.0065096,
+      "average": 0.002726,
+      "minimum": -0.00000098695
+    }
+  },
+
+  "files": {
+    "solver_log": "solver.log",
+    "support_reactions": "CaseA_R02_support_reactions.csv",
+    "solver_input": "CaseA_R02_Loads_Supports_Verification.dat",
+    "workbench_archive": "FUSESAFE_M1_A_R02_LoadSolved.wbpz",
+    "evidence_directory": "CaseA_R02_Evidence"
+  },
+
+  "validation": {
+    "analytical_stress_comparison": "Completed",
+    "support_stability": "Pending",
+    "restraint_location_sensitivity": "Pending",
+    "physical_inner_face_pressure_verification": "Pending",
+    "approved_final_baseline": false
+  }
+}
