@@ -1,380 +1,491 @@
-# FUSESAFE — Geometry Parameters and Modelling Plan
+# FUSESAFE — Geometry Parameters and Verification Status
 
-## 1. Project Description
+Updated: 3 November 2026.
 
-FUSESAFE is an educational aircraft fuselage structural analysis project.
+## 1. Project scope
 
-The project studies a curved cylindrical fuselage panel under proposed pressure loading. It investigates how a rounded rectangular window opening and surrounding reinforcement affect structural stress and deformation.
+FUSESAFE is an educational structural-analysis project studying
+a curved cylindrical fuselage panel and the effects of a window
+opening with surrounding reinforcement.
 
-Two separate geometry cases are required:
+Two geometry cases are maintained separately:
 
-1. Intact curved panel: reference model without an opening or added reinforcement.
-2. Window panel: curved panel with a centred rounded rectangular opening and surrounding reinforcement band.
+- Case A: intact curved panel.
+- Case B: curved panel with a centred rounded rectangular opening
+  and reinforcement band.
 
-The intact model must remain separate and must not be overwritten by the window model.
+Geometry and mesh verification do not establish structural
+validation or real aircraft safety.
 
-This educational model does not establish real aircraft structural safety or certification.
+## 2. Software and local workspace
 
-## 2. Software Environment
+Current Member 2 work uses:
 
-Verified on the new laptop:
-- ANSYS Workbench 2025 R1 Enterprise.
-- ANSYS DesignModeler 2025 R1.
-- ANSYS SpaceClaim 2025 R1.
-- ANSYS Mechanical 2025 R1 Enterprise.
+- Ansys Workbench 2025 R1.
+- Ansys Discovery Enterprise 2025 R1.
+- Ansys Mechanical Enterprise 2025 R1.
 
-Case A retains its DesignModeler sketch and extrusion history.
-Case B was constructed in SpaceClaim using a developed flat ring,
-Wrap, a separate Imprint operation, and removal of the central face.
+Case A retains its earlier DesignModeler geometry history.
+Earlier Case B construction history is retained in the R05 lineage.
+The newer parametric Case B geometry uses Discovery history and
+a custom wrapping script.
 
 Current local work folder:
-C:\Users\Gowtham\FUSESAFE_Work
 
-The former laptop's hardware, Discovery GPU limitations and file paths
-do not describe this laptop.
+C:\Users\abhir\FUSESAFE_Work
 
-Both geometries have opened in Mechanical. Meshing and solving remain
-unverified. MATLAB installation is not required for this manual geometry
-checkpoint.
-## 3. Coordinate System — Verified Geometry
+Earlier paths and software descriptions in historical records
+refer to previous working environments.
 
-- Global X is the cylinder axis and panel axial direction, spanning X = 0 to 1600 mm.
-- The panel is centred circumferentially about global +Y.
-- At the circumferential centreline, radial outward is +Y and the circumferential tangent is along Z.
-- Circumferential curvature lies in YZ cross-sectional planes.
-- Away from the centreline, radial and tangential directions vary around the cylinder.
+## 3. Model lineages and intended use
 
-Window width is measured along X. Window height is measured along the developed circumferential surface, not a planar projection.
+### Case A benchmark
 
-Boundary naming:
-- A_AxialEnds / B_AxialEnds: curved end edges at constant X.
-- A_CircumferentialSides / B_CircumferentialSides: straight side edges parallel to X.
+Current mesh benchmark:
 
-Case B CAD normals were visually checked in SpaceClaim and point radially outward on both skin and band faces. Case A normals and Mechanical shell orientation/pressure sign remain to be checked independently.
+FUSESAFE_M2_A_MeshTrial_R02.wbpz
 
-## 4. Shared Panel Dimensions
+This is the intact-panel benchmark for loading verification and
+restraint-location sensitivity work.
 
-These are provisional development assumptions, not validated aircraft dimensions.
+Do not substitute A_Intact or R01 for the R02 benchmark.
 
-| Parameter | Baseline value |
+### Original Case B R05
+
+Geometry source selected for Day 3 convergence preparation:
+
+FUSESAFE_M2_B_MeshTrial_R05.wbpz
+
+A separate previously verified archive is also retained:
+
+FUSESAFE_M2_B_R05_Verified.wbpz
+
+Original R05 sizing:
+
+- Global element size: 0.040 m.
+- B_Band element size: 0.010 m.
+- Nodes: 9583.
+- Elements: 3125.
+- Element types: 2991 Quad8 and 134 Tri6.
+
+Original R05 remains unchanged and separate from the new
+convergence models.
+
+### Parametric Case B
+
+Baseline archive:
+
+FUSESAFE_M2_Parametric_Mesh_R01_Final.wbpz
+
+This separate project was used for independent width, height
+and radius regeneration tests.
+
+Its baseline mesh has 9764 nodes and 3188 elements.
+It must not be confused with the original R05 mesh.
+
+### Day 3 convergence models
+
+Three separate projects were derived from restored R05 geometry.
+
+See:
+
+[Case B convergence models](Case_B/Day3_Convergence/README.md)
+
+### Day 3 geometry tests
+
+Independent parameter tests and baseline restoration are documented in:
+
+[Geometry regeneration tests](Case_B/Day3_Geometry_Tests/README.md)
+
+## 4. Coordinates and panel dimensions
+
+Global X is the cylinder axis and panel axial direction.
+
+The baseline panel is centred circumferentially about global +Y.
+
+Baseline midsurface mapping, with coordinates in metres:
+
+r(x, theta) = (x, 2 cos(theta), 2 sin(theta))
+
+Baseline ranges:
+
+- x: 0 to 1.6 m.
+- theta: -0.4 to +0.4 radians.
+
+At the circumferential centreline:
+
+- Radial outward direction: +Y.
+- Circumferential tangent: along Z.
+
+Away from the centreline, radial and tangential directions vary.
+
+| Quantity | Baseline |
 |---|---:|
-| Axial panel length | 1600 mm |
-| Circumferential arc length | 1600 mm |
-| Shell midsurface radius | 2000 mm |
-| Skin thickness | 2 mm |
-| Pressure difference | 55 kPa |
+| Axial length | 1.600 m |
+| Developed circumferential span | 1.600 m |
+| Shell reference-surface radius | 2.000 m |
+| Skin thickness | 0.002 m |
+| Opening axial width | 0.400 m |
+| Opening developed circumferential height | 0.400 m |
+| Inner corner radius | 0.040 m |
+| Band developed width | 0.050 m |
+| Outer developed bounding width | 0.500 m |
+| Outer developed bounding height | 0.500 m |
+| Outer corner radius | 0.090 m |
+| Total band thickness | 0.004 m |
 
-The opening is centred axially and circumferentially in the window model.
+Opening height refers to developed circumferential length,
+not its planar projection.
 
-### Circumferential angle
+The opening is centred axially and circumferentially.
 
-The total circumferential angle is:
+For radius R and developed panel span L, the total angular span is:
 
-theta = Arc length / Radius
+theta_total = L / R
 
-At the baseline radius:
+At baseline:
 
-theta = 1600 / 2000 = 0.8 radians
+theta_total = 1.6 / 2 = 0.8 radians
 
-theta = 0.8 × 180 / pi
+This is approximately 45.84 degrees total.
 
-Baseline total angle = approximately 45.84 degrees.
+Dimensions are educational development assumptions.
 
-The panel extends approximately 22.92 degrees on either side of its circumferential centre.
+## 5. Parametric geometry mappings
 
-If radius changes, preserve the 1600 mm arc length and recalculate:
+These mappings belong to the newer parametric Case B project.
+They are not established as editable parameters in the separate
+R05-derived convergence projects.
 
-theta (degrees) = (1600 / Radius) × (180 / pi)
+| History identifier / label | Meaning | Baseline |
+|---|---|---:|
+| B2_D1 / D1 | Opening axial width | 400 mm |
+| B2_D2 / D2 | Opening developed circumferential height | 400 mm |
+| B18 radius literals | Fuselage radius | 2 m |
 
-## 5. Geometry Case 1 — Intact Curved Panel
+D1 and D2 were independently edited and regenerated.
 
-### Purpose
+Radius is currently controlled by two literals in the B18 custom
+script. It is not exposed as a Workbench input parameter.
 
-This is the reference geometry for checking Member 1's proposed loading method before introducing the window opening.
+Both expressions must use the same radius R in metres:
 
-### Specifications
+- Vector.Create(0, R, 0.8)
+- Point.Create(1.6, R, 0)
 
-| Parameter | Value |
-|---|---:|
-| Axial length | 1600 mm |
-| Circumferential arc length | 1600 mm |
-| Midsurface radius | 2000 mm |
-| Skin thickness | 2 mm |
-| Window opening | None |
-| Added reinforcement | None |
+The baseline uses R = 2.0.
+The radius test used R = 2.1.
 
-### Required identifiable regions
+Other axial and developed-span dimensions were retained.
 
-1. Axial end 1.
-2. Axial end 2.
-3. Circumferential side edge 1.
-4. Circumferential side edge 2.
-5. Skin surface.
+### Corner-radius limitation
 
-### Requirements
+The baseline inner corner radius is 40 mm.
 
-- Create a curved cylindrical shell midsurface.
-- Preserve the specified axial length and circumferential arc length.
-- Keep all four boundary edges identifiable.
-- Save this as a separate intact reference model.
-- Do not introduce an opening or reinforcement.
-- Do not apply arbitrary fixed supports or loads during geometry construction.
+The width and height tests retained this value. An automatic rule
+such as 0.10 × min(width, height) has not been implemented or
+demonstrated.
 
-## 6. Geometry Case 2 — Window Panel
+The separate recorded corner-round operations must remain intact.
 
-### Purpose
+### History handling
 
-This model investigates the effect of a window opening and additional reinforcement on the curved shell.
+Keep Discovery History Tracking open during geometry edits.
 
-### Window specifications
+Accept changes using the inner custom-script editor close control,
+then regenerate through History Tracking's Continue control.
 
-| Parameter | Value |
-|---|---:|
-| Window width (axial) | 400 mm |
-| Window height (circumferential) | 400 mm |
-| Window position | Panel centre |
-| Corner-radius rule | 0.10 × min(width, height) |
-| Baseline inner corner radius | 40 mm |
+Do not confuse the custom editor's Debug triangle with History
+Tracking's Continue control.
 
-The window width and height must be independent adjustable parameters.
+Edits to a standalone Discovery file do not automatically update
+the Workbench-linked internal SYS geometry.
 
-### Reinforcement specifications
+## 6. Geometry and named selections
 
-| Parameter | Value |
-|---|---:|
-| Band width | 50 mm |
-| Outer bounding width | 500 mm |
-| Outer bounding height | 500 mm |
-| Inner corner radius | 40 mm |
-| Outer corner radius | 90 mm |
-| Added thickness | 2 mm |
-| Skin thickness | 2 mm |
-| Total band thickness | 4 mm |
+Case A contains one intact surface face.
 
-The reinforcement band must surround the opening with a constant 50 mm surface offset.
+Case B contains one connected surface body with:
 
-### Required identifiable regions
+- One skin face.
+- One reinforcement-band face.
+- A removed centre opening.
+- Eight shared CAD edges between skin and band.
 
-1. Axial end 1.
-2. Axial end 2.
-3. Circumferential side edge 1.
-4. Circumferential side edge 2.
-5. Skin surface.
-6. Reinforcement-band surface.
-7. Window opening edge.
+### Case A named selections
 
-### Requirements
+| Name | Scope |
+|---|---|
+| A_Skin | One face |
+| A_AxialEnds | Two curved edges at constant X |
+| A_CircumferentialSides | Two straight edges parallel to X |
 
-- Use the same panel dimensions and radius as the intact reference.
-- Create a centred rounded rectangular opening.
-- Create a separate reinforcement face region.
-- Keep the surrounding skin face region separate.
-- Ensure the opening edge remains identifiable.
-- Ensure the reinforcement band remains identifiable.
-- Do not overwrite the intact reference geometry.
+### Case B named selections
 
-## 7. Shell Representation and Thickness
+| Name | Scope |
+|---|---|
+| B_Skin | One skin face |
+| B_Band | One band face |
+| B_OpeningEdge | Eight inner-hole edges |
+| B_AxialEnds | Two curved outer edges at constant X |
+| B_CircumferentialSides | Two straight outer edges parallel to X |
 
-Both initial geometry cases will use shell midsurface representations.
+Named selections were checked during parameter tests and mesh
+preparation.
 
-For the window model:
+Scoping Wizard reported no current missing references in the
+three convergence models.
 
-- Skin thickness: 2 mm.
-- Added reinforcement thickness: 2 mm.
-- Total reinforcement-region thickness: 4 mm.
+## 7. Shell thickness and offsets
 
-Thickness assignments and shell offsets must be coordinated before structural analysis.
+Verified Case B assignments:
 
-The geometry must contain separate identifiable face regions so that different shell thicknesses can be assigned later.
+| Region | Thickness | Offset type | Membrane offset |
+|---|---:|---|---:|
+| B_Skin | 0.002 m | Middle | — |
+| B_Band | 0.004 m | User Defined | -0.001 m |
 
-## 8. Proposed Loading Information
+Both assignments are unsuppressed and scoped through the
+corresponding named selections.
 
-Status: PROPOSED — not implemented or validated.
+The body-level thickness is Manual, 0.002 m, Middle.
 
-Member 1 proposes the following baseline loading:
+Body stiffness is Membrane and Bending.
 
-| Loading quantity | Proposed value |
-|---|---:|
-| Outward pressure | 55 kPa |
-| Axial edge tension intensity | 55 N/mm |
-| Circumferential edge tension intensity | 110 N/mm |
+The band represents 0.004 m total thickness, including the
+0.002 m skin contribution.
 
-Pressure conversion:
+With verified outward normals, the intended physical bounds are:
 
-55 kPa = 0.055 MPa = 0.055 N/mm².
+- Skin: -0.001 m to +0.001 m relative to the reference surface.
+- Band: -0.001 m to +0.003 m relative to the reference surface.
 
-The proposed membrane actions are:
+The offset values were verified in Mechanical. Final structural
+decks must retain the intended section definitions.
 
-N_circumferential = p × R = 110 N/mm.
+## 8. Material
 
-N_axial = p × R / 2 = 55 N/mm.
+Material assigned in the inspected R05-derived convergence models:
 
-Pressure is to be applied once to the retained shell surface, with shell normal and pressure sign checked.
+FUSESAFE_2024_T3_PROVISIONAL
 
-Edge tension directions must follow the actual orientation of each boundary.
-
-Line-load intensities must not be confused with pressure values.
-
-A free-body diagram and reaction-equilibrium check are required.
-
-No loads are to be implemented until Member 1 reviews the geometry and mesh.
-
-## 9. Supports and Boundary Conditions
-
-- Do not fix all four edges.
-- Do not introduce arbitrary fixed supports.
-- Use only constraints required to remove rigid body motion.
-- Select the exact constrained nodes and degrees of freedom after geometry and mesh inspection.
-- Do not use weak springs as a substitute for a reviewed support definition.
-
-## 10. Intact Reference Validation
-
-Member 1 has supplied the following theoretical reference values:
-
-| Quantity | Reference value |
-|---|---:|
-| Hoop stress | 55 MPa |
-| Axial stress | 27.5 MPa |
-| Von Mises stress | Approximately 47.63 MPa |
-
-These values are theoretical thin-walled closed-cylinder membrane references, not Ansys simulation results.
-
-The intact reference model must be checked for:
-
-- Far-field membrane stresses.
-- Deformation.
-- Load orientation.
-- Reaction equilibrium.
-- Mesh convergence.
-- Boundary-distance sensitivity.
-
-Only after reviewing the intact reference should the window and reinforcement model proceed to structural validation.
-
-## 11. Intended Modelling Workflow
-
-1. Construct the intact curved panel.
-2. Save it as a separate reference geometry.
-3. Verify dimensions and identifiable boundaries.
-4. Construct the window panel as a separate geometry.
-5. Verify the opening and reinforcement regions.
-6. Transfer geometry into ANSYS Mechanical.
-7. Coordinate shell thickness assignments and offsets.
-8. Generate and inspect the mesh.
-9. Obtain Member 1's approved supports and loading implementation.
-10. Validate the intact reference case.
-11. Introduce the window and reinforcement analysis.
-12. Connect the validated workflow to MATLAB for reinforcement-thickness testing.
-
-## 12. Current Progress
-
-### Verified — Member 2 geometry checkpoint, 1 November 2026
-
-- Workbench, DesignModeler, SpaceClaim and Mechanical 2025 R1 used on the new laptop.
-- Case A: one intact surface body, one face, four edges; area 2,560,000 mm².
-- Case B: one surface body containing separate skin and band faces, with a rounded window opening.
-- Case B construction bodies B_Developed_Band_Source and B_Wrapped_Band_Tool removed.
-- Case B Check Geometry reported no geometry problems.
-- Case B band area: 84,419.8437 mm².
-- Case B total retained surface area: 2,401,373.8761 mm².
-- Case B cylindrical band radius: 2000 mm.
-- Case B CAD normals visually checked as radially outward on both faces.
-- Both cases imported into Mechanical 2025 R1 as shell bodies.
-- Named selections transferred and their face/edge counts checked.
-- Case A extrusion depth changed from 1600 to 1610 mm, regenerated successfully, then restored to 1600 mm and saved.
-- Both project archives restored into separate check folders and opened successfully in Mechanical.
-- Both archives uploaded to ansys_model on branch geometry:
-  - FUSESAFE_M2_A_Intact.wbpz
-  - FUSESAFE_M2_B_WindowBand.wbpz
-
-### Named selections
-
-| Case A | Entity count |
-|---|---:|
-| A_Skin | 1 face |
-| A_CircumferentialSides | 2 edges |
-| A_AxialEnds | 2 edges |
-
-| Case B | Entity count |
-|---|---:|
-| B_Skin | 1 face |
-| B_Band | 1 face |
-| B_OpeningEdge | 8 edges |
-| B_CircumferentialSides | 2 edges |
-| B_AxialEnds | 2 edges |
-
-### Pending geometry and handoff checks
-
-- Independently check Case A face-normal orientation.
-- Verify Case B developed dimensions and centring after wrapping; source dimensions and areas alone do not fully establish this.
-- Demonstrate Case B geometry variation and baseline restoration. Independent width/height/radius parameters and automatic corner-radius rules are not implemented.
-- Verify Mechanical shell orientation, thickness scoping and offsets.
-- Verify shared skin/band mesh connectivity when meshing is undertaken.
-
-### Pending analysis and integration
-
-- Physical shell thicknesses remain unassigned: Mechanical displayed zero body thickness at this checkpoint.
-- Intended skin thickness is 2 mm; trial band thickness is 4 mm total, including 2 mm added reinforcement.
-- Confirm the provisional material is available and assign it with Member 1.
-- Mesh generation, mesh verification, approved supports and loads.
-- Intact and window-model FEA validation.
-- Automation integration; MATLAB is not required for Member 2's manual geometry work.
-
-## 13. Important Project Notes
-
-- Use ANSYS 2025 R1.
-- Preserve the existing FUSESAFE repository and geometry branch.
-- Keep the intact and window geometry cases separate.
-- Treat panel dimensions as provisional development assumptions.
-- Keep the loading approach marked PROPOSED until validated.
-- Do not report geometry, meshing or FEA as completed until verified in the actual software.
-- A passing numerical stress result does not prove real aircraft safety.
-## 14. Material Selection — Aluminium 2024-T3
-
-### Selected preliminary material
-
-The initial educational model uses Aluminium 2024-T3.
-
-Ansys Engineering Data material name:
-
-`FUSESAFE_2024_T3_PROVISIONAL`
-
-### Preliminary material properties
+Recorded preliminary properties:
 
 | Property | Value |
 |---|---:|
-| Young's modulus | 73,100 MPa |
-| Young's modulus (SI) | 7.31 × 10^10 Pa |
+| Young's modulus | 7.31 × 10^10 Pa |
 | Poisson's ratio | 0.33 |
-| Density | 2,780 kg/m³ |
-| Tensile yield strength | 345 MPa |
-| Tensile yield strength (SI) | 3.45 × 10^8 Pa |
+| Density | 2780 kg/m³ |
+| Tensile yield strength | 3.45 × 10^8 Pa |
 
-### Material status
+These are provisional educational properties, not certified
+sheet-specific design allowables.
 
-- Material properties entered and saved in ANSYS Engineering Data by Member 1.
-- Material has not yet been assigned to geometry.
-- No structural analysis has been solved using this material.
-- Member 2 must coordinate with Member 1 before assigning material and shell thicknesses.
+Material identity was preserved during convergence preparation.
+This does not establish final material approval or confirm the
+assignment in any separately solved project.
 
-### Limitations
+The material assignment in the separate parametric project must
+be confirmed before structural setup.
 
-These are provisional properties for the initial educational model.
+Material source documentation was previously identified as:
 
-Some values are published typical material properties and are not sheet-specific design allowables.
+validation/material_selection.md
 
-They must not be treated as certified aircraft design properties or used to establish real aircraft safety.
+Its current branch and merge status are not verified here.
 
-### Factor of Safety
+The stated factor of safety is 2. It is an evaluation criterion;
+it is not an instruction to double the benchmark loads.
 
-The required factor of safety is 2.
+## 9. Independent geometry regeneration tests
 
-It is an acceptance criterion for evaluating the analysis results. Do not multiply the applied pressure or proposed edge loads by the factor of safety.
+| Case | Width (m) | Height (m) | Radius (m) | Nodes | Elements |
+|---|---:|---:|---:|---:|---:|
+| Parametric baseline | 0.400 | 0.400 | 2.000 | 9764 | 3188 |
+| Width test | 0.410 | 0.400 | 2.000 | 9710 | 3170 |
+| Height test | 0.400 | 0.410 | 2.000 | 9241 | 3019 |
+| Radius test | 0.400 | 0.400 | 2.100 | 9603 | 3139 |
+| Final restored baseline | 0.400 | 0.400 | 2.000 | 9764 | 3188 |
 
-### Source
+All three changed cases regenerated and remeshed successfully.
 
-Material source and limitations are documented in:
+Named selections and thickness assignments were checked after
+updates and baseline restoration.
 
-`validation/material_selection.md`
+### Shared interface verification
 
-This file is currently on the `fea-validation` branch. Its merge into `main` has not yet been confirmed.
+| Case | Complete quadratic sides | Shared nodes |
+|---|---:|---:|
+| Original parametric baseline | 179 | 358 |
+| Width test | 182 | 364 |
+| Height test | 177 | 354 |
+| Radius test | 174 | 348 |
 
+The tests found zero overlapping skin/band elements.
+Each matched interface side included its two corner nodes and
+midside node, with one skin and one band element.
+
+Final restored-baseline mesh counts and quality matched the
+original baseline. A new connectivity export was not run after
+that final restoration.
+
+Radius-test quality:
+
+- Minimum: 0.70163.
+- Average: 0.97052.
+- Maximum: 0.99996.
+
+Baseline quality:
+
+- Minimum: 0.68406.
+- Average: 0.97183.
+- Maximum: 0.99993.
+
+Width- and height-test quality minima were not recorded.
+
+## 10. Case B convergence meshes
+
+The original R05 40/10 mm configuration remains separate.
+
+| Level | Global size (m) | Band size (m) | Nodes | Elements | Quad8 | Tri6 |
+|---|---:|---:|---:|---:|---:|---:|
+| Coarse | 0.040 | 0.020 | 6299 | 2033 | 1977 | 56 |
+| Medium | 0.020 | 0.010 | 21419 | 7045 | 6855 | 190 |
+| Fine | 0.010 | 0.005 | 84466 | 27974 | 27554 | 420 |
+
+These are configured sizing inputs, not measurements of every
+element. Band sizing uses Soft behavior.
+
+The medium mesh is a new refinement of R05 and is the agreed
+baseline for the three-level structural comparison.
+
+### Connectivity
+
+| Level | Complete shared quadratic sides | Shared nodes |
+|---|---:|---:|
+| Coarse | 91 | 182 |
+| Medium | 179 | 358 |
+| Fine | 351 | 702 |
+
+All three reported:
+
+- Zero overlapping skin/band elements.
+- Zero bad interface sides.
+- Zero shared nodes missing complete sides.
+
+### Element quality
+
+| Level | Minimum | Average | Maximum |
+|---|---:|---:|---:|
+| Coarse | 0.63293 | 0.98004 | 0.99999 |
+| Medium | 0.58277 | 0.98065 | 0.99999 |
+| Fine | 0.71360 | 0.97951 | 0.99999 |
+
+### Open sizing warning
+
+Medium and fine display a warning that some local face element
+sizes exceed the global maximum size.
+
+The intended global and B_Band inputs were verified.
+The warning's cause remains unresolved.
+
+Connectivity checks and quality statistics do not resolve this
+warning. It must remain documented for structural review.
+
+License-response and possible lost-scoping warnings also appear
+in message history. Scoping Wizard found no current missing
+references.
+
+Separate archives, connectivity reports and opening screenshots
+were prepared and uploaded. Restoration of the three new
+convergence archives has not yet been tested.
+
+## 11. Case A loading benchmark
+
+The agreed Case A verification benchmark uses loads referenced
+to the 2 m shell midsurface:
+
+| Quantity | Value |
+|---|---:|
+| Outward pressure | 55000 Pa |
+| Axial membrane resultant Nx | 55000 N/m |
+| Circumferential membrane resultant Ntheta | 110000 N/m |
+
+Theoretical thin-cylinder membrane stress references for
+0.002 m thickness:
+
+- Hoop stress: 55 MPa.
+- Axial stress: 27.5 MPa.
+- Von Mises stress: approximately 47.63 MPa.
+
+These are theoretical references, not verified simulation results.
+
+Pressure direction and edge-traction directions must follow the
+actual shell geometry.
+
+SHELL281 pressure-face conventions must be checked against the
+actual solved deck. A face label alone does not establish the
+intended physical loading.
+
+Do not mix this midsurface benchmark with a physical inner-radius
+loading convention without updating the analytical and MATLAB
+reference calculations consistently.
+
+The exported R02 mesh dataset did not itself contain applied loads.
+
+## 12. Supports and structural validation
+
+The original Case A R02 model must remain unchanged during
+restraint-location sensitivity comparisons.
+
+Alternative support-node coordinates and a 3-2-1 translational
+constraint arrangement were prepared separately.
+
+The alternative configuration passed a rank-6 rigid-body
+constraint check. This is not proof of full shell stability,
+correct equilibrium or acceptable stresses.
+
+Member 1 reported an initial Case A solve.
+Completed solved result files were not supplied to this workflow,
+so its numerical results have not been independently verified here.
+
+Member 4 is preparing MATLAB comparison structures and awaiting
+the two solved result sets.
+
+Case A results remain preliminary pending:
+
+- Solver stability and warning review.
+- Actual applied-load verification.
+- Force and moment equilibrium.
+- Reaction checks.
+- Restraint-location sensitivity.
+- Stress and displacement comparisons.
+
+Case B convergence meshes are prepared, but structural solves
+and result-convergence assessment remain pending.
+
+## 13. Handoff and ownership
+
+- Preserve Case A and Case B as separate model lineages.
+- Preserve original R05 separately from convergence refinements.
+- Keep the parametric geometry-test project separate from R05.
+- Use separate projects for coarse, medium and fine meshes.
+- Avoid simultaneous editing of the same binary Ansys project.
+- Member 1 received the convergence-mesh handoff.
+- Parameter mappings are documented for Member 4.
+- Agree binary-project ownership before shared editing.
+
+## 14. Remaining checks
+
+- Restore-test the new convergence and geometry-test archives
+  into separate locations.
+- Investigate the unresolved medium/fine sizing warning.
+- Confirm final material and section assignments in solved decks.
+- Complete structural stability, equilibrium and sensitivity checks.
+- Complete the structural mesh-convergence comparison.
+- Confirm parameter integration with Member 4.
+- Coordinate branch integration with the team.
+
+Keep earlier archives and verification records as historical
+evidence. Do not treat mesh preparation as completed structural
+validation.
