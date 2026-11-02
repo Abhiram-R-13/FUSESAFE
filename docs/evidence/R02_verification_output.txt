@@ -1,0 +1,52 @@
+FUSESAFE – Case A R02 Mesh Verification
+
+Verification script: verify_R02.m
+Verification method: MATLAB numerical integration
+Mesh: 4,961 nodes, 1,600 SHELL281 elements
+Shell thickness: 2 mm
+Shell offset: Middle
+Pressure: 55 kPa
+
+MATLAB Command Window Output:
+
+Area = 2.559999999582613 m^2
+
+Pressure force N / moment Nm about global origin:
+
+1.0e+05 *
+
+```
+0.0000    1.3708    0.0000
+```
+
+1.0e+05 *
+
+-0.0000   -0.0000    1.0966
+
+Boundary force N / moment Nm:
+
+1.0e+05 *
+
+-0.0000   -1.3708   -0.0000
+
+1.0e+05 *
+
+```
+0.0000    0.0000   -1.0966
+```
+
+Combined residual force N / moment Nm:
+
+1.0e-05 *
+
+-0.0000   -0.1318   -0.0000
+
+1.0e-05 *
+
+-0.0000   -0.0000   -0.1054
+
+Status:
+Numerical force and moment equilibrium verification executed successfully.
+
+Limitations:
+This verifies numerical equilibrium for the exported R02 loading data. It does not establish final ANSYS pressure-face selection, support stability or structural FEA validity. No loads or supports were added, and no structural solve was performed.
