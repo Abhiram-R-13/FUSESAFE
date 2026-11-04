@@ -1,0 +1,226 @@
+{
+  "cases": [
+    {
+      "added_mm": 0,
+      "file": "FUSESAFE_M2_B_Day4_Added0mm.dat",
+      "sha256": "6ae7b47e5d9094b9e83c9ca91928f2e19b1b5ae5a5ae174d7f6732263a2a5e25",
+      "node_records": 21419,
+      "blocks": {
+        "NBLOCK": {
+          "identical_to_zero": true,
+          "sha256": "67ea212e95035b466d31cd82441f9f3d73425a3321bf8ac696111f52724ec58b"
+        },
+        "EBLOCK": {
+          "identical_to_zero": true,
+          "sha256": "996e8d9b397e348150fd53eab1676ea34b07553df5130c9d4f3707225f7cc64f"
+        },
+        "_CM41": {
+          "identical_to_zero": true,
+          "sha256": "e7e0ae0d99ed3ed48a9a7b468ef7a9ef4b6f014fb442f483950e1d9979d3b618"
+        },
+        "_CM43": {
+          "identical_to_zero": true,
+          "sha256": "b13f8399296835e5fc0ebd56504882bf329d553e71feabff73987add8f945384"
+        },
+        "B_BAND": {
+          "identical_to_zero": true,
+          "sha256": "89ce64172ec947c2adc2f8240f853719f84d227c8549592e8e7c9c2a31b0b0e9"
+        },
+        "B_SKIN": {
+          "identical_to_zero": true,
+          "sha256": "9d40bdf498735a2a9fd776a8bf5c4cd394032bc66c18a94985dd3812867a31a3"
+        },
+        "B_OPENINGEDGE": {
+          "identical_to_zero": true,
+          "sha256": "a4b78f54677526a6965ea68a6489261bd93e58d3fc55672ab9b93a146a1b88f5"
+        },
+        "B_CIRCUMFERENTIALSIDES": {
+          "identical_to_zero": true,
+          "sha256": "14e94f8ccadc26ec62a56c9e8c0cfcb7021ed3fcea47b3dd40c8110756266172"
+        },
+        "B_AXIALENDS": {
+          "identical_to_zero": true,
+          "sha256": "ca5a40a8d01c3d8e3d73eb693b5d24e8e6c0276577cd806164563ee1678d026c"
+        }
+      },
+      "differences": []
+    },
+    {
+      "added_mm": 1,
+      "file": "FUSESAFE_M2_B_Day4_Added1mm.dat",
+      "sha256": "d6ea7950b51e7f05d8363893f1f08ad357eb698fd3de00a1297263078f70145b",
+      "node_records": 21419,
+      "blocks": {
+        "NBLOCK": {
+          "identical_to_zero": true,
+          "sha256": "67ea212e95035b466d31cd82441f9f3d73425a3321bf8ac696111f52724ec58b"
+        },
+        "EBLOCK": {
+          "identical_to_zero": true,
+          "sha256": "996e8d9b397e348150fd53eab1676ea34b07553df5130c9d4f3707225f7cc64f"
+        },
+        "_CM41": {
+          "identical_to_zero": true,
+          "sha256": "e7e0ae0d99ed3ed48a9a7b468ef7a9ef4b6f014fb442f483950e1d9979d3b618"
+        },
+        "_CM43": {
+          "identical_to_zero": true,
+          "sha256": "b13f8399296835e5fc0ebd56504882bf329d553e71feabff73987add8f945384"
+        },
+        "B_BAND": {
+          "identical_to_zero": true,
+          "sha256": "89ce64172ec947c2adc2f8240f853719f84d227c8549592e8e7c9c2a31b0b0e9"
+        },
+        "B_SKIN": {
+          "identical_to_zero": true,
+          "sha256": "9d40bdf498735a2a9fd776a8bf5c4cd394032bc66c18a94985dd3812867a31a3"
+        },
+        "B_OPENINGEDGE": {
+          "identical_to_zero": true,
+          "sha256": "a4b78f54677526a6965ea68a6489261bd93e58d3fc55672ab9b93a146a1b88f5"
+        },
+        "B_CIRCUMFERENTIALSIDES": {
+          "identical_to_zero": true,
+          "sha256": "14e94f8ccadc26ec62a56c9e8c0cfcb7021ed3fcea47b3dd40c8110756266172"
+        },
+        "B_AXIALENDS": {
+          "identical_to_zero": true,
+          "sha256": "ca5a40a8d01c3d8e3d73eb693b5d24e8e6c0276577cd806164563ee1678d026c"
+        }
+      },
+      "differences": [
+        {
+          "line": 29418,
+          "zero": "secdata,2.e-003",
+          "current": "secdata,3.e-003"
+        },
+        {
+          "line": 29419,
+          "zero": "secoff,user,-0",
+          "current": "secoff,user,-0.0005"
+        }
+      ]
+    },
+    {
+      "added_mm": 2,
+      "file": "FUSESAFE_M2_B_Day4_Added2mm.dat",
+      "sha256": "c15c0ecd8aa35ecd5b9fe8216d661d6a92931f2d72f44aa50074fc2b49264d52",
+      "node_records": 21419,
+      "blocks": {
+        "NBLOCK": {
+          "identical_to_zero": true,
+          "sha256": "67ea212e95035b466d31cd82441f9f3d73425a3321bf8ac696111f52724ec58b"
+        },
+        "EBLOCK": {
+          "identical_to_zero": true,
+          "sha256": "996e8d9b397e348150fd53eab1676ea34b07553df5130c9d4f3707225f7cc64f"
+        },
+        "_CM41": {
+          "identical_to_zero": true,
+          "sha256": "e7e0ae0d99ed3ed48a9a7b468ef7a9ef4b6f014fb442f483950e1d9979d3b618"
+        },
+        "_CM43": {
+          "identical_to_zero": true,
+          "sha256": "b13f8399296835e5fc0ebd56504882bf329d553e71feabff73987add8f945384"
+        },
+        "B_BAND": {
+          "identical_to_zero": true,
+          "sha256": "89ce64172ec947c2adc2f8240f853719f84d227c8549592e8e7c9c2a31b0b0e9"
+        },
+        "B_SKIN": {
+          "identical_to_zero": true,
+          "sha256": "9d40bdf498735a2a9fd776a8bf5c4cd394032bc66c18a94985dd3812867a31a3"
+        },
+        "B_OPENINGEDGE": {
+          "identical_to_zero": true,
+          "sha256": "a4b78f54677526a6965ea68a6489261bd93e58d3fc55672ab9b93a146a1b88f5"
+        },
+        "B_CIRCUMFERENTIALSIDES": {
+          "identical_to_zero": true,
+          "sha256": "14e94f8ccadc26ec62a56c9e8c0cfcb7021ed3fcea47b3dd40c8110756266172"
+        },
+        "B_AXIALENDS": {
+          "identical_to_zero": true,
+          "sha256": "ca5a40a8d01c3d8e3d73eb693b5d24e8e6c0276577cd806164563ee1678d026c"
+        }
+      },
+      "differences": [
+        {
+          "line": 29418,
+          "zero": "secdata,2.e-003",
+          "current": "secdata,4.e-003"
+        },
+        {
+          "line": 29419,
+          "zero": "secoff,user,-0",
+          "current": "secoff,user,-0.001"
+        }
+      ]
+    },
+    {
+      "added_mm": 5,
+      "file": "FUSESAFE_M2_B_Day4_Added5mm.dat",
+      "sha256": "39e50434e309587ab42cb43f005ce3d75d4c175ecec6e13fd30943d98533e1f1",
+      "node_records": 21419,
+      "blocks": {
+        "NBLOCK": {
+          "identical_to_zero": true,
+          "sha256": "67ea212e95035b466d31cd82441f9f3d73425a3321bf8ac696111f52724ec58b"
+        },
+        "EBLOCK": {
+          "identical_to_zero": true,
+          "sha256": "996e8d9b397e348150fd53eab1676ea34b07553df5130c9d4f3707225f7cc64f"
+        },
+        "_CM41": {
+          "identical_to_zero": true,
+          "sha256": "e7e0ae0d99ed3ed48a9a7b468ef7a9ef4b6f014fb442f483950e1d9979d3b618"
+        },
+        "_CM43": {
+          "identical_to_zero": true,
+          "sha256": "b13f8399296835e5fc0ebd56504882bf329d553e71feabff73987add8f945384"
+        },
+        "B_BAND": {
+          "identical_to_zero": true,
+          "sha256": "89ce64172ec947c2adc2f8240f853719f84d227c8549592e8e7c9c2a31b0b0e9"
+        },
+        "B_SKIN": {
+          "identical_to_zero": true,
+          "sha256": "9d40bdf498735a2a9fd776a8bf5c4cd394032bc66c18a94985dd3812867a31a3"
+        },
+        "B_OPENINGEDGE": {
+          "identical_to_zero": true,
+          "sha256": "a4b78f54677526a6965ea68a6489261bd93e58d3fc55672ab9b93a146a1b88f5"
+        },
+        "B_CIRCUMFERENTIALSIDES": {
+          "identical_to_zero": true,
+          "sha256": "14e94f8ccadc26ec62a56c9e8c0cfcb7021ed3fcea47b3dd40c8110756266172"
+        },
+        "B_AXIALENDS": {
+          "identical_to_zero": true,
+          "sha256": "ca5a40a8d01c3d8e3d73eb693b5d24e8e6c0276577cd806164563ee1678d026c"
+        }
+      },
+      "differences": [
+        {
+          "line": 29418,
+          "zero": "secdata,2.e-003",
+          "current": "secdata,7.e-003"
+        },
+        {
+          "line": 29419,
+          "zero": "secoff,user,-0",
+          "current": "secoff,user,-0.0025"
+        }
+      ]
+    }
+  ],
+  "assignment": {
+    "skin_elements": 6182,
+    "band_elements": 863,
+    "overlap": 0,
+    "union": 7045,
+    "expected_elements": 7045
+  },
+  "area_m2_display": 0.084406,
+  "density_kg_m3": 2780
+}
