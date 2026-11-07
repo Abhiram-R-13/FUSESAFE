@@ -1,0 +1,2 @@
+window_width_mm,window_height_mm,corner_radius_mm,skin_thickness_mm,pressure_diff_kpa,required_fos
+400,300,50,2,55,2
