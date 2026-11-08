@@ -2,7 +2,7 @@
 
 ANSYS version: 2025 R1.
 Scope: geometry and mesh packaging plus parameter-update demonstration.
-Geometry approval by team lead: pending.
+Nominal demonstration geometry approved by Member 1; approval relayed on 9 November 2026
 Structural material, loads, supports, and final analysis specification: pending.
 No structural solve was performed during this Day6 workflow.
 
