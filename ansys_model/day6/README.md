@@ -2,8 +2,8 @@
 
 ANSYS version: 2025 R1.
 Scope: geometry and mesh packaging plus parameter-update demonstration.
-Nominal demonstration geometry approved by Member 1; approval relayed on 9 November 2026
-Structural material, loads, supports, and final analysis specification: pending.
+Nominal demonstration geometry approved by Member 1; approval relayed on 9 November 2026,
+Provisional AA 2024-T3 working properties are agreed and supplied separately in ../Case_B/material_R01/. This Day6 archive retains its original Structural Steel material. AMS4037S verification, material certification, loads, supports, and final analysis specification remain pending.
 No structural solve was performed during this Day6 workflow.
 
 ## Files
