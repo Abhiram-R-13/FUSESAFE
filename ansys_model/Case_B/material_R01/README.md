@@ -56,8 +56,7 @@ Variable added-thickness parameterization was not implemented here.
 2. Restore into a new separate destination folder.
 3. Inspect Engineering Data and the shell body's material assignment.
 4. Confirm saved mesh counts and thickness assignments.
-Archive creation is confirmed; restoration remains unverified.
-
+Archive restored and checked by Member 2 on 9 November 2026 in a separate folder. GUI inspection confirmed the four working material properties, shell-body material assignment, skin 2 mm with Middle offset, band total 4 mm with -1 mm user-defined offset, and 9845 nodes / 3217 shells (3065 Quad8, 152 Tri6). No mesh regeneration, connectivity audit, or solve was performed during this restoration check.
 No loads/supports were changed and no structural solve was performed.
 Structural setup requires separate team confirmation.
 
