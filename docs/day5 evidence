@@ -1,0 +1,31 @@
+## Day 5 – Task 3: Required Factor of Safety Sensitivity
+
+### Objective
+Check how changing the required Factor of Safety affects the acceptance threshold while keeping the structural analysis results unchanged.
+
+### Fixed reference case
+- Skin thickness: 2 mm
+- B_Band total thickness: 4 mm
+- Applied pressure: 0.055 MPa
+- Maximum von-Mises stress: 464.23 MPa
+- Provisional yield strength: 290 MPa
+
+### Calculation
+
+Allowable stress = Provisional yield strength / Required FoS
+
+| Required FoS | Allowable Stress (MPa) | FEA Maximum Stress (MPa) | Acceptance |
+|---:|---:|---:|---|
+| 1.5 | 193.33 | 464.23 | FAIL |
+| 2.0 | 145.00 | 464.23 | FAIL |
+| 2.5 | 116.00 | 464.23 | FAIL |
+
+### Observation
+Increasing the required FoS decreases the allowable stress. The FEA maximum stress remains unchanged because the structural loading and model configuration are unchanged.
+
+### Conclusion
+The required FoS changes the acceptance threshold, not the applied pressure or calculated FEA stress.
+
+**Material limitation:** 290 MPa is a provisional yield-strength assumption, not a verified material certification value.
+
+**Scope limitation:** This is a numerical acceptance-logic check. MATLAB implementation verification is a separate task.
