@@ -1,0 +1,25 @@
+/COM,ANSYS RELEASE 2025 R1           BUILD 25.1      UP20241202       04:56:31
+
+ *** WARNING ***                         CP =       0.891   TIME= 04:56:33
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       1.312   TIME= 04:56:34
+ Material number 4 (used by element 28136) should normally have at least 
+ one MP or one TB type command associated with it.  Output of energy by  
+ material may not be available.                                          
+
+ *** WARNING ***                         CP =       7.578   TIME= 04:56:41
+ The Distributed Sparse Matrix Solver is currently running in the        
+ out-of-core memory mode.  This memory mode may provide significantly    
+ worse performance compared to the in-core memory mode, depending on     
+ the amount of available system memory and I/O speed.  Please monitor    
+ the solver performance to ensure that the large amount of I/O to the    
+ solver files does not create a bottleneck for performance.              
+
+ *** WARNING ***                         CP =      66.906   TIME= 04:57:58
+ A reference moment value times the tolerance is used by the             
+ Newton-Raphson method for checking convergence.  The calculated         
+ reference MOMENT CONVERGENCE VALUE = 0 is less than a threshold.  This  
+ threshold is internally calculated.  You can overwrite it by            
+ specifying MINREF on the CNVTOL command.  Check results carefully.      

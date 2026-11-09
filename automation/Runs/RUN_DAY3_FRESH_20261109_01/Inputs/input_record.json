@@ -1,0 +1,18 @@
+{
+  "run_id": "RUN_DAY3_FRESH_20261109_01",
+  "candidate_name": "C_Day3_Fresh_4mm",
+  "total_band_thickness_mm": 4,
+  "added_thickness_mm": 2,
+  "added_mass_kg": [],
+  "elastic_modulus_mpa": 73100,
+  "poisson_ratio": 0.33,
+  "density_kg_m3": 2780,
+  "workbench_yield_strength_mpa": 345,
+  "assessment_yield_strength_mpa": 290,
+  "required_fos": 2,
+  "material_approval": "PENDING",
+  "material_note": "290 MPa is the provisional assessment basis. Workbench stores 345 MPa yield strength.",
+  "source_project": "FUSESAFE_M2_B_Day3_Fine_Setup.wbpj",
+  "source_project_location": "S:\\solid mech project\\FUSESAFE_M4_Working\\09_Day3_FreshSolve_Copy",
+  "input_completeness_note": "Refer to the source Workbench project for complete geometry and loading definitions."
+}

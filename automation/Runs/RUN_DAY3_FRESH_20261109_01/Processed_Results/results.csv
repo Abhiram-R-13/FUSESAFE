@@ -1,0 +1,2 @@
+run_id,added_thickness_mm,added_mass_kg,max_stress_mpa,actual_fos,max_deformation_mm,solve_status,error_message
+RUN_DAY3_FRESH_20261109_01,2,NaN,464.23,0.624690347457079,13.157,SUCCESS_WITH_WARNINGS,Solver completed with 4 warning(s). Review solver log.
