@@ -1,65 +1,63 @@
+# FUSESAFE Material Selection
 
-# FUSESAFE - Material Properties
+## 1. Selected Material
 
-## 1. Material Selection
+Material: Aluminium 2024-T3, bare sheet.
 
-Selected material: Aluminium 2024-T3
+ANSYS Engineering Data name: `AA2024_T3_Bare_Provisional`
 
-Status: PROVISIONAL - Educational model only.
+Status: PROVISIONAL educational modelling choice.
 
-Material form: Aluminium sheet
-Assumed skin thickness: 2 mm
+The material is modelled as homogeneous and isotropic for the current structural analysis.
 
-## 2. Material Properties
+## 2. Current ANSYS Material Properties
 
-| Property | Symbol | Value | Unit |
-|---|---|---:|---|
-| Young's Modulus | E | 73100 | MPa |
-| Poisson's Ratio | nu | 0.33 | Dimensionless |
-| Density | rho | 2780 | kg/m^3 |
-| Tensile Yield Strength | sigma_y | 345 | MPa |
+| Property | Value | Unit |
+|---|---:|---|
+| Young's modulus | 73100 | MPa |
+| Poisson's ratio | 0.33 | Dimensionless |
+| Tensile yield strength | 290 | MPa |
+| Density | 2780 | kg/m³ |
+| Bulk modulus | 71667 | MPa |
+| Shear modulus | 27481 | MPa |
 
-## 3. Design Requirements
+The 290 MPa yield-strength value is the current team-selected provisional FUSESAFE modelling input.
 
-| Parameter | Value |
-|---|---:|
-| Required Factor of Safety | 2 |
-| Skin thickness | 2 mm |
-| Pressure difference | 55 kPa |
-| Fuselage radius | 2000 mm |
+## 3. Historical Supplier Reference
 
-## 4. Preliminary Strength Calculation
+An earlier material record used a typical tensile yield strength of 345 MPa from ASM MatWeb:
 
-Allowable stress based on yield:
+https://asm.matweb.com/search/SpecificMaterial.asp?bassnum=MA2024T3
 
-sigma_allowable = sigma_y / FoS
+An additional supplier reference is:
 
-sigma_allowable = 345 / 2
+https://aerospacemetals.com/wp-content/uploads/2023/06/Aluminum-2024-T3.pdf
 
-sigma_allowable = 172.5 MPa
+The 345 MPa value is retained as historical supplier reference data. It is not the current FUSESAFE ANSYS yield-strength input.
 
-## 5. Material Data Limitations
+## 4. Yield Strength and Allowable Stress
 
-The listed values are representative preliminary
-properties, not certified design allowables.
+For current FUSESAFE screening calculations, use:
 
-Actual properties depend on sheet thickness,
-product form, material specification and orientation.
+Provisional yield strength = 290 MPa.
 
-A thickness-specific manufacturer datasheet must
-be obtained before finalising the material definition.
+For required FoS = 2:
 
-## 6. References
+Allowable stress = 290 / 2 = 145 MPa.
 
-1. MatWeb - Aluminum 2024-T3:
-https://www.matweb.com/search/datasheet.aspx?MatGUID=57483b4d782940faaf12964a1821fb61
+This is a preliminary educational screening threshold, not a certified aircraft structural design allowable.
 
-2. NASA Technical Report - Mechanical Properties
-of 2024-T3 Aluminum Alloy:
-https://ntrs.nasa.gov/api/citations/19660022534/downloads/19660022534.pdf
+## 5. Limitations
 
-## 7. Important Disclaimer
+The 290 MPa value has been selected by the FUSESAFE team for provisional modelling. It has not been established as the certified minimum yield strength for the exact sheet specification.
 
-This material selection is for an educational
-structural analysis model. It does not establish
-aircraft certification or real-world safety.
+Before any real design application, confirm:
+
+- Applicable material specification and temper.
+- Bare or clad sheet condition.
+- Product form and thickness range.
+- Material direction and directional strength.
+- Temperature applicability.
+- Appropriate minimum design allowable.
+
+Do not report a verified aircraft structural safety conclusion using these provisional properties.
