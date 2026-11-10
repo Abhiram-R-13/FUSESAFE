@@ -1,6 +1,6 @@
  # FUSESAFE initial loading and support proposal
 **Status: Initial theoretical proposal. A modified loading and support configuration has subsequently been implemented in ANSYS; its physical validity remains under verification.**
-**Status: PROPOSED. Not implemented or validated.**
+
 
 ## Purpose
 
@@ -280,7 +280,7 @@ The current structural solutions demonstrate numerical behaviour for the specifi
 
 **Conclusion:** The proposed loading theory and the implemented ANSYS configuration must be treated as separate records until the original load derivation, pressure direction, opening-edge load and complete equilibrium are verified.
 
-### Limitations
+
 
 This is a preliminary resultant-force check, not a complete proof of mechanical equilibrium.
 
