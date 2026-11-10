@@ -1,5 +1,6 @@
 Material,Temper,Product_Form,Property,Value,Unit,Source,Source_URL,Source_Basis,Limitations
 Aluminium 2024-T3,T3,Generic sheet assumption,Young's modulus,73100,MPa,ASM MatWeb,https://asm.matweb.com/search/SpecificMaterial.asp?bassnum=MA2024T3,AA typical,Not a certified design allowable
 Aluminium 2024-T3,T3,Generic sheet assumption,Poisson's ratio,0.33,dimensionless,ASM MatWeb,https://asm.matweb.com/search/SpecificMaterial.asp?bassnum=MA2024T3,Published typical value,Not product-specific
-Aluminium 2024-T3,T3,Generic sheet assumption,Tensile yield strength,345,MPa,ASM MatWeb,https://asm.matweb.com/search/SpecificMaterial.asp?bassnum=MA2024T3,AA typical,Not a certified design allowable
+Aluminium 2024-T3,T3,Generic sheet assumption,Tensile yield strength,345,MPa,ASM MatWeb,https://asm.matweb.com/search/SpecificMaterial.asp?bassnum=MA2024T3,AA typical; historical supplier reference,Not the current FUSESAFE ANSYS input; not a certified design allowable
 Aluminium 2024-T3,T3,Generic sheet assumption,Density,2780,kg/m3,ASM MatWeb,https://asm.matweb.com/search/SpecificMaterial.asp?bassnum=MA2024T3,AA typical,Converted from 2.78 g/cm3
+Aluminium 2024-T3,T3,Bare sheet - AA2024_T3_Bare_Provisional,Tensile yield strength,290,MPa,FUSESAFE team decision / ANSYS Engineering Data,,Current provisional FUSESAFE modelling input,Team-selected provisional value; not a certified sheet-specific design allowable
