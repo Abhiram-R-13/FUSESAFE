@@ -1,5 +1,5 @@
-# FUSESAFE initial loading and support proposal
-
+ # FUSESAFE initial loading and support proposal
+**Status: Initial theoretical proposal. A modified loading and support configuration has subsequently been implemented in ANSYS; its physical validity remains under verification.**
 **Status: PROPOSED. Not implemented or validated.**
 
 ## Purpose
@@ -176,6 +176,109 @@ For the ideal symmetric panel:
 - Symmetry gives zero net global Z force.
 
 Therefore, the calculated global resultant forces balance.
+---
+
+# Implemented ANSYS Loading and Support Configuration – Day 5/6 Review
+
+## 1. Actual Structural Loading
+
+The implemented structural model uses:
+
+- Shell pressure applied through APDL commands.
+- Five SURF156 boundary-load groups.
+- Three displacement support groups.
+
+The original proposal described four surrounding-shell boundary actions. The implemented model additionally includes an opening-edge load group.
+
+This is an important modelling difference. The physical justification for the opening-edge load and its interaction with the other boundary actions remains unresolved.
+
+## 2. Baseline Loading at 0.055 MPa
+
+The baseline model uses an internal-minus-external pressure of 0.055 MPa.
+
+The recorded SURF156 load components are:
+
+| Load group | Applied components |
+|---|---|
+| Hoop upper | Y = −42.8146, Z = +101.2661 N/mm |
+| Hoop lower | Y = −42.8146, Z = −101.2661 N/mm |
+| Axial start | X = −54.94501375 N/mm |
+| Axial end | X = +54.94501375 N/mm |
+| Opening edge | Y = +5.688014385 N/mm |
+
+The corresponding baseline structural model converged and produced:
+
+- Maximum von-Mises stress: 464.23 MPa.
+- Maximum total deformation: 13.157 mm.
+
+## 3. Exploratory Pressure-Scaled Loading at 0.070 MPa
+
+The Day 5 coupled case used the following pressure-scaled SURF156 components:
+
+| Load group | Applied components |
+|---|---|
+| Hoop upper | Y = −54.491, Z = +128.89 N/mm |
+| Hoop lower | Y = −54.491, Z = −128.89 N/mm |
+| Axial start | X = −69.930 N/mm |
+| Axial end | X = +69.930 N/mm |
+| Opening edge | Y = +7.2393 N/mm |
+
+Shell pressure was applied at 0.070 MPa.
+
+The original calculation source for these five load groups is still unavailable. Their reconstructed resultants suggest a relationship with the baseline pressure, but this does not independently establish the exact load derivation or exclude double counting.
+
+Consequently, pressure-scaled results remain exploratory.
+
+## 4. Implemented Support Conditions
+
+The three displacement support groups used in the structural analysis are:
+
+| Support | Constrained degrees of freedom |
+|---|---|
+| A | UX = UY = UZ = 0 |
+| B | UY = UZ = 0 |
+| C | UY = 0 |
+
+These constraints are implemented in the structural models.
+
+Their physical adequacy for representing the surrounding fuselage structure remains subject to further verification.
+
+## 5. Pressure and Factor of Safety Independence
+
+The MATLAB App and backend verification performed by Members 3 and 4 confirmed that changing Required FoS modifies the allowable-stress threshold and acceptance status only.
+
+It does not modify:
+
+- Applied shell pressure.
+- The five SURF156 boundary-load groups.
+- Geometry.
+- Material properties.
+- Supports.
+
+The backend also reuses existing structural results for FoS reassessment without launching another ANSYS solve.
+
+## 6. Remaining Loading Verification
+
+The following checks remain necessary before the implemented loading approach can be considered physically validated:
+
+1. Recover or independently establish the original derivation of all five SURF156 load groups.
+2. Verify actual shell element normals and pressure direction.
+3. Verify the directions and physical scopes of all boundary-load groups.
+4. Establish whether the opening-edge load represents a real physical load path.
+5. Check for possible double counting between pressure and boundary actions.
+6. Calculate complete global force and moment resultants.
+7. Compare applied loads with ANSYS support reactions.
+8. Validate the intact curved-panel response against the analytical closed-cylinder reference.
+
+## 7. Engineering Interpretation
+
+The preliminary free-body equations in the original proposal describe an idealized intact curved cylindrical shell patch.
+
+They provide theoretical reference resultants and are not proof that the implemented ANSYS load distribution is mechanically equivalent.
+
+The current structural solutions demonstrate numerical behaviour for the specified implemented loads and supports. They do not independently validate the physical loading model.
+
+**Conclusion:** The proposed loading theory and the implemented ANSYS configuration must be treated as separate records until the original load derivation, pressure direction, opening-edge load and complete equilibrium are verified.
 
 ### Limitations
 
