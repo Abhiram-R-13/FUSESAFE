@@ -1,0 +1,16 @@
+SetScriptVersion(Version="25.1.122")
+Open(FilePath=r"S:\solid mech project\FUSESAFE_M4_Working\16_P1P4_Optimization_Project\FUSESAFE_Thickness_Study.wbpj")
+systems = GetAllSystems()
+targetModel = None
+targetName = ""
+for system in systems:
+    try:
+        targetModel = system.GetContainer(ComponentName="Model")
+        targetName = system.DisplayText
+        break
+    except:
+        pass
+if targetModel is None:
+    raise Exception("Mechanical Model container not found.")
+mechanicalCommand = open(r"S:\solid mech project\FUSESAFE_M4_Working\16_P1P4_Optimization_Project\Optimization_Runs_P1P4\OPT_20261110_171551_317\export_fusesafe_images.py").read()
+targetModel.SendCommand(Language="Python",Command=mechanicalCommand)

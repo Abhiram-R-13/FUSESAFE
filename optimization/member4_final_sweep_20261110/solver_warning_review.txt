@@ -1,0 +1,104 @@
+
+========================================
+CANDIDATE: CAND_20261110_171551_346
+========================================
+
+WARNING 1
+*** WARNING ***                         CP =       0.750   TIME= 17:16:51
+Element shape checking is currently inactive.  Issue SHPP,ON or
+SHPP,WARN to reactivate, if desired.
+
+WARNING 2
+*** WARNING ***                         CP =       0.953   TIME= 17:16:51
+Material number 4 (used by element 28136) should normally have at least
+one MP or one TB type command associated with it.  Output of energy by
+material may not be available.
+
+WARNING 3
+*** WARNING ***                         CP =      71.062   TIME= 17:18:07
+A reference moment value times the tolerance is used by the
+Newton-Raphson method for checking convergence.  The calculated
+reference MOMENT CONVERGENCE VALUE = 0 is less than a threshold.  This
+threshold is internally calculated.  You can overwrite it by
+specifying MINREF on the CNVTOL command.  Check results carefully.
+
+Total solver warnings: 3
+Total solver errors: 0
+
+========================================
+CANDIDATE: CAND_20261110_172205_789
+========================================
+
+WARNING 1
+*** WARNING ***                         CP =       0.625   TIME= 17:22:35
+Element shape checking is currently inactive.  Issue SHPP,ON or
+SHPP,WARN to reactivate, if desired.
+
+WARNING 2
+*** WARNING ***                         CP =       0.750   TIME= 17:22:35
+Material number 4 (used by element 28136) should normally have at least
+one MP or one TB type command associated with it.  Output of energy by
+material may not be available.
+
+WARNING 3
+*** WARNING ***                         CP =      55.281   TIME= 17:23:30
+A reference moment value times the tolerance is used by the
+Newton-Raphson method for checking convergence.  The calculated
+reference MOMENT CONVERGENCE VALUE = 0 is less than a threshold.  This
+threshold is internally calculated.  You can overwrite it by
+specifying MINREF on the CNVTOL command.  Check results carefully.
+
+Total solver warnings: 3
+Total solver errors: 0
+
+========================================
+CANDIDATE: CAND_20261110_172636_622
+========================================
+
+WARNING 1
+*** WARNING ***                         CP =       0.609   TIME= 17:27:34
+Element shape checking is currently inactive.  Issue SHPP,ON or
+SHPP,WARN to reactivate, if desired.
+
+WARNING 2
+*** WARNING ***                         CP =       0.734   TIME= 17:27:34
+Material number 4 (used by element 28136) should normally have at least
+one MP or one TB type command associated with it.  Output of energy by
+material may not be available.
+
+WARNING 3
+*** WARNING ***                         CP =      65.328   TIME= 17:28:59
+A reference moment value times the tolerance is used by the
+Newton-Raphson method for checking convergence.  The calculated
+reference MOMENT CONVERGENCE VALUE = 0 is less than a threshold.  This
+threshold is internally calculated.  You can overwrite it by
+specifying MINREF on the CNVTOL command.  Check results carefully.
+
+Total solver warnings: 3
+Total solver errors: 0
+
+========================================
+CANDIDATE: CAND_20261110_173206_912
+========================================
+
+WARNING 1
+*** WARNING ***                         CP =       0.625   TIME= 17:33:00
+Element shape checking is currently inactive.  Issue SHPP,ON or
+SHPP,WARN to reactivate, if desired.
+
+WARNING 2
+*** WARNING ***                         CP =       0.781   TIME= 17:33:00
+Material number 4 (used by element 28136) should normally have at least
+one MP or one TB type command associated with it.  Output of energy by
+material may not be available.
+
+WARNING 3
+*** WARNING ***                         CP =      54.406   TIME= 17:33:59
+A reference moment value times the tolerance is used by the
+Newton-Raphson method for checking convergence.  The calculated
+reference MOMENT CONVERGENCE VALUE = 0 is less than a threshold.  This
+threshold is internally calculated.  You can overwrite it by
+specifying MINREF on the CNVTOL command.  Check results carefully.
+
+Total solver warnings: 3
+Total solver errors: 0

@@ -1,0 +1,22 @@
+FUSESAFE MECHANICAL TREE
+Analysis count: 1
+
+ANALYSIS: Static Structural
+SOLUTION TREE:
+  Solution | Ansys.ACT.Automation.Mechanical.Solution
+    Solution Information | Ansys.ACT.Automation.Mechanical.SolutionInformation
+    Equivalent Stress | Ansys.ACT.Automation.Mechanical.Results.StressResults.EquivalentStress
+    Total Deformation | Ansys.ACT.Automation.Mechanical.Results.DeformationResults.TotalDeformation
+
+GEOMETRY TREE:
+  Geometry | Ansys.ACT.Automation.Mechanical.Geometry
+    SYS | Ansys.ACT.Automation.Mechanical.Part
+      SYS\B_WindowPanel | Ansys.ACT.Automation.Mechanical.Body
+    B_Skin_2mm | Ansys.ACT.Automation.Mechanical.Thickness
+    B_Band_4mm | Ansys.ACT.Automation.Mechanical.Thickness
+
+MESH TREE:
+  Mesh | Ansys.ACT.Automation.Mechanical.MeshControls.Mesh
+    Face Sizing | Ansys.ACT.Automation.Mechanical.MeshControls.Sizing
+
+INSPECTION_COMPLETE

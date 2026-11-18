@@ -1,0 +1,8 @@
+SUCCESS: stress_contour.png
+SUCCESS: deformation_contour.png
+SUCCESS: geometry_3d.png
+FAILED_COUNT=0
+NO_SOLVE_COMMAND_ISSUED=True
+SOURCE_DESIGN_POINT=DP 98
+SOURCE_P1_MM=7
+SOURCE_P4_MM=-2.5

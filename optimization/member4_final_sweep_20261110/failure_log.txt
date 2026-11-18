@@ -1,0 +1,2 @@
+FUSESAFE candidate failure log
+No candidate failures recorded initially.

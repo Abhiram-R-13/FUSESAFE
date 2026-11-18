@@ -1,0 +1,29 @@
+{
+  "run_id": "OPT_20261110_171551_317",
+  "required_fos": 2,
+  "status": "INCOMPLETE",
+  "total_candidates": 4,
+  "completed_candidates": 4,
+  "failed_candidates": 0,
+  "successful_candidates": 0,
+  "warning_candidates": 4,
+  "yield_strength_mpa": 290,
+  "yield_strength_basis": "Provisional assessment basis",
+  "material_approval": "PENDING",
+  "base_band_thickness_mm": 2,
+  "search_candidates_added_mm": [
+    0,
+    1.25,
+    3.75,
+    5
+  ],
+  "model_scope": "Prototype varies B_Band thickness parameter P1 and membrane offset parameter P4.",
+  "project_file": "S:\\solid mech project\\FUSESAFE_M4_Working\\16_P1P4_Optimization_Project\\FUSESAFE_Thickness_Study.wbpj",
+  "optimization_runs_root": "S:\\solid mech project\\FUSESAFE_M4_Working\\16_P1P4_Optimization_Project\\Optimization_Runs_P1P4",
+  "skin_thickness_assumed_mm": 2,
+  "parameter_mapping": "P1=total band thickness; P4=(2-P1)/2.",
+  "other_app_inputs_connected": false,
+  "last_candidate_index": 4,
+  "updated_at": "2026-11-10 17:37:04",
+  "finished_at": "2026-11-10 17:37:04"
+}

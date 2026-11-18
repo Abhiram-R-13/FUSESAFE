@@ -1,0 +1,51 @@
+FUSESAFE MEMBER 4 - APP INTEGRATION HANDOFF
+
+Optimization Run ID: OPT_20261110_171551_317
+Final Status: INCOMPLETE
+Completed Candidates: 4/4
+Failed Candidates: 0
+Warning-Status Candidates: 4
+
+RUN FOLDER:
+S:\solid mech project\FUSESAFE_M4_Working\16_P1P4_Optimization_Project\Optimization_Runs_P1P4\OPT_20261110_171551_317
+
+REQUIRED FILES:
+results.csv
+optimization_history.csv
+structural_assessment.csv
+run_manifest.json
+failure_log.txt
+
+ADDITIONAL FILES:
+combined_pilot_and_sweep_results.csv
+stress_vs_added_thickness.png
+solver_warning_review.txt
+
+Important: All four candidates completed with warnings.
+All four failed the Required FoS of 2.0.
+No validated feasible design is claimed.
+
+
+IMAGE EXPORTS - COMPLETED
+stress_contour.png
+deformation_contour.png
+geometry_3d.png
+
+Image source: DP 98
+Total B_Band thickness: 7 mm
+Membrane offset: -2.5 mm
+No additional ANSYS solve was issued for image export.
+
+
+VERIFIED IMAGE EXPORT RESULTS
+Source Design Point: DP 98
+P1 Total Band Thickness: 7 mm
+P4 Membrane Offset: -2.5 mm
+Maximum Stress: 330.694026 MPa
+Maximum Deformation: 6.684260 mm
+Image Resolution: 1600 x 1200 pixels
+Additional FEA Solve: Not performed
+
+stress_contour.png - VERIFIED
+deformation_contour.png - VERIFIED
+geometry_3d.png - EXPORTED
