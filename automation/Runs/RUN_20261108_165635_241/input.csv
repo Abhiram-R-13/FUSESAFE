@@ -1,0 +1,2 @@
+window_width_mm,window_height_mm,fuselage_radius_mm,skin_thickness_mm,pressure_diff_kpa,required_fos
+400,300,2000,2,55,2

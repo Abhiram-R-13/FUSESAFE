@@ -1,0 +1,11 @@
+{
+  "run_id": "RUN_20261108_165635_241",
+  "run_date": "2026-11-08 16:56:35",
+  "schema_version": "2.0",
+  "input_file": "input.csv",
+  "results_file": "results.csv",
+  "optimization_history_file": "optimization_history.csv",
+  "status": "prepared",
+  "structural_solve_completed": false,
+  "material_configuration": "pending_approval"
+}

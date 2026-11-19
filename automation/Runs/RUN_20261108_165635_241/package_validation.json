@@ -1,0 +1,32 @@
+{
+  "run_id": "RUN_20261108_165635_241",
+  "checked_at": "2026-11-08 17:04:00",
+  "package_valid": true,
+  "checks": {
+    "input_csv": true,
+    "manifest_json": true,
+    "material_configuration_csv": true,
+    "results_csv": true,
+    "optimization_history_csv": true,
+    "execution_readiness_json": true,
+    "execution_plan_json": true,
+    "input_schema": true,
+    "input_row": true,
+    "input_numeric": true,
+    "manifest_run_id": true,
+    "manifest_status": true,
+    "solve_not_completed": true,
+    "manifest_schema_version": true,
+    "material_schema": true,
+    "material_components": true,
+    "material_pending": true,
+    "results_schema": true,
+    "history_schema": true,
+    "results_empty": true,
+    "history_empty": true,
+    "readiness_blocked": true,
+    "plan_blocked": true,
+    "dry_run_mode": true,
+    "ansys_not_launched": true
+  }
+}

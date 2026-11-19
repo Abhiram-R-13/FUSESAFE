@@ -1,0 +1,18 @@
+{
+  "run_id": "RUN_DAY3_FRESH_20261109_01",
+  "candidate_name": "C_Day3_Fresh_4mm",
+  "run_type": "Fresh baseline structural simulation",
+  "processing_status": "COMPLETED",
+  "solver_status": "SUCCESS_WITH_WARNINGS",
+  "maximum_stress_mpa": 464.23,
+  "maximum_deformation_mm": 13.157,
+  "actual_fos": 0.624690347457079,
+  "required_fos": 2,
+  "acceptance": "FAIL",
+  "solver_errors": 0,
+  "solver_warnings": 4,
+  "added_mass_status": "NOT_CALCULATED",
+  "material_approval": "PENDING",
+  "optimization_status": "Baseline only - optimization search not performed",
+  "package_created": "2026-11-09 11:16:34"
+}

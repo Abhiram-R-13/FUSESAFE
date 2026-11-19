@@ -1,0 +1,30 @@
+>> verify_R02
+Area = 2.559999999582613 m^2
+Pressure force N / moment Nm about global origin:
+   1.0e+05 *
+
+    0.0000    1.3708    0.0000
+
+   1.0e+05 *
+
+   -0.0000   -0.0000    1.0966
+
+Boundary force N / moment Nm:
+   1.0e+05 *
+
+   -0.0000   -1.3708   -0.0000
+
+   1.0e+05 *
+
+    0.0000    0.0000   -1.0966
+
+Combined residual force N / moment Nm:
+   1.0e-05 *
+
+   -0.0000   -0.1318   -0.0000
+
+   1.0e-05 *
+
+   -0.0000   -0.0000   -0.1054
+
+>> 

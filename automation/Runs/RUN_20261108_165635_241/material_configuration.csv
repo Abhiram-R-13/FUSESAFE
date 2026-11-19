@@ -1,0 +1,3 @@
+component,material_name,youngs_modulus_mpa,poissons_ratio,density_kg_per_mm3,tensile_yield_strength_mpa,approval_status,source_reference
+skin_body,,,,,,pending,
+reinforcement_band,,,,,,pending,

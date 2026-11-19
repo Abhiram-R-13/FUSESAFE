@@ -1,0 +1,12 @@
+{
+  "materials_approved": false,
+  "project_available": false,
+  "project_verified": false,
+  "ansys_available": true,
+  "ready": false,
+  "blockers": [
+    "Material approval is pending.",
+    "Complete WBPZ project archive unavailable.",
+    "Project completeness has not been verified."
+  ]
+}

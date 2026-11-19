@@ -1,0 +1,20 @@
+{
+  "run_id": "RUN_20261109_005610_351",
+  "created_at": "2026-11-09 00:56:10",
+  "execution_mode": "DRY_RUN",
+  "ansys_executable": "RunWB2.exe (path configured locally)",
+  "ansys_available": true,
+  "materials_approved": false,
+  "project_available": false,
+  "project_verified": false,
+  "readiness_passed": false,
+  "launch_attempted": false,
+  "command_generated": false,
+  "execution_status": "blocked",
+  "blockers": [
+    "Material approval is pending.",
+    "Complete WBPZ project archive unavailable.",
+    "Project completeness has not been verified."
+  ],
+  "next_action": "Resolve all readiness blockers before ANSYS execution."
+}
